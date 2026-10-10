@@ -1,37 +1,131 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d1d">
-  <meta name="description" content="وب‌سایت شخصی کیان؛ فضایی برای ایده‌ها، یادگیری و پروژه‌های تازه.">
-  <title>فضای کیان | ایده‌ها فراتر می‌روند</title>
-  <style>
-    :root{color-scheme:dark;--bg:#080d1d;--bg2:#0d1530;--card:rgba(18,28,55,.78);--text:#f3f6ff;--muted:#aab6d2;--accent:#73e4ff;--purple:#b69aff;--border:rgba(181,204,255,.16);--shadow:0 18px 60px rgba(0,0,0,.22)}
-    body.light{color-scheme:light;--bg:#f4f7ff;--bg2:#eaf0ff;--card:rgba(255,255,255,.88);--text:#14203b;--muted:#5b6780;--accent:#087da8;--purple:#7044d6;--border:rgba(20,35,70,.14);--shadow:0 18px 50px rgba(30,50,90,.1)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at 78% 10%,rgba(115,80,210,.16),transparent 34%),radial-gradient(ellipse at 15% 42%,rgba(20,140,200,.12),transparent 32%),var(--bg);line-height:1.8;transition:background .3s,color .3s;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5;background-image:radial-gradient(2px 2px at 20px 30px,#fff 45%,transparent 60%),radial-gradient(1px 1px at 80px 90px,#bcecff 45%,transparent 60%),radial-gradient(1.5px 1.5px at 140px 40px,#fff 45%,transparent 60%);background-size:180px 150px;mask-image:linear-gradient(to bottom,#000,transparent 90%)}
-    a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.container{width:min(1100px,90%);margin:auto}header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-weight:900;font-size:21px;color:var(--accent);white-space:nowrap}.navlinks{display:flex;align-items:center;gap:22px}.navlinks a{font-size:13px;color:var(--muted);transition:color .2s}.navlinks a:hover,.navlinks a.active{color:var(--accent)}.actions{display:flex;gap:8px}.iconbtn{border:1px solid var(--border);background:var(--card);color:var(--text);padding:8px 11px;border-radius:12px;cursor:pointer}#menuBtn{display:none}
-    .hero{min-height:78vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px;padding:75px 0 65px;position:relative}.hero-copy{animation:rise .8s ease both}.tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);border:1px solid var(--border);background:var(--card);padding:7px 13px;border-radius:99px;font-size:13px}h1{font-size:clamp(39px,6vw,68px);line-height:1.45;margin:20px 0 12px;letter-spacing:-1.5px}.gradient{background:linear-gradient(100deg,var(--accent),var(--purple));color:transparent;background-clip:text;-webkit-background-clip:text}.description{color:var(--muted);line-height:2.2;max-width:630px;font-size:15px}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 19px;border-radius:13px;border:1px solid var(--border);transition:transform .2s,border-color .2s,background .2s;cursor:pointer}.btn:hover{transform:translateY(-3px);border-color:var(--accent)}.primary{background:var(--accent);color:#07111f;border-color:transparent;font-weight:bold}.secondary{background:var(--card);color:var(--text)}
-    .space-art{min-height:360px;position:relative;display:grid;place-items:center;isolation:isolate}.orbit{width:min(320px,75vw);aspect-ratio:1;border:1px solid rgba(115,228,255,.3);border-radius:50%;position:relative;display:grid;place-items:center;transform:rotate(-18deg);box-shadow:0 0 80px rgba(115,100,255,.08)}.orbit::before,.orbit::after{content:"";position:absolute;border:1px solid rgba(182,154,255,.24);border-radius:50%;inset:25px;transform:rotate(48deg) scaleX(1.35)}.orbit::after{inset:55px;transform:rotate(-48deg) scaleX(1.35)}.planet{width:145px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 25%,#b9f6ff 0,#6d9be9 18%,#6657bb 50%,#22204d 78%);box-shadow:inset -20px -16px 35px #080d1d,0 0 55px rgba(115,228,255,.28);position:relative}.planet::after{content:"";position:absolute;inset:35% -23%;height:25%;border:8px solid rgba(190,220,255,.68);border-left-color:rgba(190,220,255,.25);border-right-color:rgba(190,220,255,.2);border-radius:50%;transform:rotate(-22deg)}.satellite{position:absolute;width:11px;height:11px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent);top:12%;left:23%}.float-label{position:absolute;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);padding:10px 14px;border-radius:14px;font-size:12px;color:var(--muted);backdrop-filter:blur(10px)}.float-label strong{color:var(--text);display:block;font-size:14px}.label-one{top:15%;right:0}.label-two{bottom:13%;left:0}
-    section{padding:70px 0}.section-head{margin-bottom:28px}.eyebrow{color:var(--accent);font-size:12px;font-weight:bold;letter-spacing:.5px}.section-title{font-size:clamp(25px,4vw,34px);margin:5px 0 8px;line-height:1.5}.section-subtitle{color:var(--muted);font-size:14px;line-height:2;margin:0;max-width:700px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:23px;box-shadow:var(--shadow);transition:transform .25s,border-color .25s;backdrop-filter:blur(10px)}.card:hover{transform:translateY(-5px);border-color:var(--accent)}.card-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:var(--bg2);font-size:23px;margin-bottom:15px}.card h3{margin:0 0 8px;font-size:17px}.card p{color:var(--muted);line-height:2;font-size:13px;margin:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}.about-panel{padding:27px;border-radius:22px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow)}.about-panel p{color:var(--muted);line-height:2.2;font-size:14px}.facts{display:grid;gap:12px;margin-top:18px}.fact{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}.fact span:first-child{color:var(--muted)}.fact span:last-child{font-weight:bold}.skill-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.skill{border:1px solid var(--border);border-radius:99px;padding:7px 12px;font-size:12px;color:var(--muted);background:var(--bg2)}.project-card{display:flex;flex-direction:column;min-height:210px}.project-card .project-foot{margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;color:var(--accent);font-size:12px}.project-foot .soon{color:var(--muted)}.contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px;align-items:start}.contact-note,.contact-form{border:1px solid var(--border);background:var(--card);border-radius:22px;padding:25px;box-shadow:var(--shadow)}.contact-note p{color:var(--muted);font-size:14px;line-height:2.1}.contact-form{display:grid;gap:14px}.field{display:grid;gap:7px}.field label{font-size:13px;color:var(--muted)}.field input,.field textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px 13px;color:var(--text)}.field textarea{min-height:135px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:.7}.form-status{margin:0;font-size:13px;color:var(--accent);min-height:1.5em}footer{border-top:1px solid var(--border);padding:25px 0;color:var(--muted);text-align:center;font-size:12px;line-height:2}.socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:12px 0}.socials a{color:var(--accent)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:translateY(0)}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    @media(max-width:780px){.navlinks{display:none;position:absolute;top:71px;right:5%;left:5%;padding:15px;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:10px 6px}#menuBtn{display:inline-flex}.hero{grid-template-columns:1fr;min-height:auto;padding:62px 0 35px;gap:10px}.hero-copy{order:1}.space-art{order:0;min-height:270px}.orbit{width:230px}.planet{width:105px}.label-one{right:2%;top:10%}.label-two{left:2%;bottom:8%}.grid{grid-template-columns:1fr 1fr}.about,.contact-layout{grid-template-columns:1fr}section{padding:50px 0}}@media(max-width:520px){.grid{grid-template-columns:1fr}.logo{font-size:18px}.hero{padding-top:40px}h1{font-size:39px}.space-art{min-height:245px}.orbit{width:205px}.card{padding:20px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-  </style>
-</head>
-<body>
-<header><nav class="container" aria-label="ناوبری اصلی"><a href="#home" class="logo">فضای کیان ✦</a><div class="navlinks" id="navLinks"><a href="#home">خانه</a><a href="#about">درباره من</a><a href="#skills">مهارت‌ها</a><a href="#projects">پروژه‌ها</a><a href="#contact">تماس</a></div><div class="actions"><button class="iconbtn" id="themeBtn" type="button" aria-label="تغییر تم" title="تغییر تم">☀️</button><button class="iconbtn" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button></div></nav></header>
-<main>
-<section class="hero container" id="home"><div class="hero-copy"><span class="tag">✦ خوش اومدی به فضای من</span><h1>ایده‌های بزرگ،<br><span class="gradient">از همین‌جا</span><br>شروع می‌شن.</h1><p class="description">من کیانم؛ اینجا فضای شخصی منه برای یادگیری، تجربه‌کردن و ساختن چیزهای تازه. این سایت قراره هم‌زمان با ایده‌ها و پروژه‌هام رشد کنه.</p><div class="buttons"><a href="#projects" class="btn primary">دیدن پروژه‌ها <span aria-hidden="true">←</span></a><a href="#about" class="btn secondary">بیشتر درباره من</a></div></div><div class="space-art" aria-label="تصویر تزئینی سیاره و مدارهای فضایی" role="img"><div class="orbit"><div class="planet"></div><span class="satellite"></span></div><div class="float-label label-one"><strong>همیشه در حال یادگیری</strong>هر روز یک قدم جلوتر</div><div class="float-label label-two"><strong>ایده ← اجرا</strong>شروع کوچک، آینده بزرگ</div></div></section>
-<section id="about"><div class="container about"><div class="reveal"><div class="section-head"><span class="eyebrow">درباره من</span><h2 class="section-title">این فقط یک وب‌سایت نیست.</h2></div><p class="description">این صفحه نقطه شروعی برای معرفی من و کارهامه. با گذشت زمان، پروژه‌های واقعی، تجربه‌ها و چیزهایی که یاد می‌گیرم بهش اضافه می‌شن.</p><div class="buttons"><a href="#contact" class="btn secondary">ارتباط با من</a></div></div><div class="about-panel reveal"><h3>نمای کلی</h3><p>یک فضای شخصی با حال‌وهوای فضایی، طراحی واکنش‌گرا و بخش‌هایی که می‌تونیم مطابق سلیقه‌ات گسترش بدیم.</p><div class="facts"><div class="fact"><span>نام</span><span>کیان</span></div><div class="fact"><span>نوع سایت</span><span>وب‌سایت شخصی</span></div><div class="fact"><span>میزبانی</span><span>GitHub Pages</span></div><div class="fact"><span>وضعیت</span><span>در حال رشد ✨</span></div></div></div></div></section>
-<section id="skills"><div class="container"><div class="section-head reveal"><span class="eyebrow">چیزهایی که اینجا می‌سازیم</span><h2 class="section-title">مهارت‌ها و علاقه‌ها</h2><p class="section-subtitle">این برچسب‌ها فعلاً نمونه‌اند؛ بعداً می‌تونیم فقط مهارت‌ها و علاقه‌های واقعی خودت رو جایگزین کنیم.</p></div><div class="grid"><article class="card reveal"><div class="card-icon">💻</div><h3>وب و فناوری</h3><p>فضایی برای ثبت مسیر یادگیری و تجربه‌های مرتبط با فناوری و ساخت وب‌سایت.</p><div class="skill-list"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">در حال یادگیری</span></div></article><article class="card reveal"><div class="card-icon">💡</div><h3>ایده‌پردازی</h3><p>جمع‌آوری ایده‌ها و تبدیل قدم‌به‌قدم آن‌ها به پروژه‌های قابل‌استفاده.</p><div class="skill-list"><span class="skill">خلاقیت</span><span class="skill">حل مسئله</span></div></article><article class="card reveal"><div class="card-icon">🚀</div><h3>یادگیری مداوم</h3><p>ثبت چیزهای تازه‌ای که یاد می‌گیرم و به‌روزرسانی سایت در طول مسیر.</p><div class="skill-list"><span class="skill">تمرین</span><span class="skill">پیشرفت</span></div></article></div></div></section>
-<section id="projects"><div class="container"><div class="section-head reveal"><span class="eyebrow">نمونه‌کارها</span><h2 class="section-title">پروژه‌های من</h2><p class="section-subtitle">پروژه‌های واقعی رو می‌تونیم در این بخش معرفی کنیم. فعلاً کارت‌ها جای آماده برای اضافه‌کردن کارهای آینده‌اند.</p></div><div class="grid"><article class="card project-card reveal"><div class="card-icon">🌌</div><h3>وب‌سایت شخصی</h3><p>همین سایت؛ یک فضای شخصی با طراحی فضایی و بخش‌های قابل توسعه.</p><div class="project-foot"><span>HTML · CSS · JS</span><a href="#home">مشاهده ↑</a></div></article><article class="card project-card reveal"><div class="card-icon">🧪</div><h3>پروژه بعدی</h3><p>اینجا توضیح کوتاه پروژه‌ای که بعداً می‌سازی قرار می‌گیره.</p><div class="project-foot"><span class="soon">به‌زودی</span><span>در حال برنامه‌ریزی</span></div></article><article class="card project-card reveal"><div class="card-icon">✨</div><h3>ایده در دست ساخت</h3><p>برای یک ایده تازه آماده‌ست؛ بعداً اسم، توضیحات و لینک پروژه رو اضافه می‌کنیم.</p><div class="project-foot"><span class="soon">به‌زودی</span><span>ایده جدید</span></div></article></div></div></section>
-<section id="contact"><div class="container"><div class="section-head reveal"><span class="eyebrow">ارتباط</span><h2 class="section-title">پیامت رو برام بفرست</h2><p class="section-subtitle">برای پیشنهاد، ایده یا پرسش می‌تونی از فرم زیر استفاده کنی.</p></div><div class="contact-layout"><div class="contact-note reveal"><div class="card-icon">📨</div><h3>در تماس باشیم</h3><p>فرم به Formspree متصل شده. برای دریافت پیام‌ها، مطمئن شو آدرس ایمیلت در حساب Formspree تأیید شده و فرم فعال است.</p><p>لطفاً اطلاعات خصوصی یا حساس رو در پیام ننویس.</p></div><form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xyekjjak" method="POST"><div class="field"><label for="name">نام</label><input id="name" name="name" type="text" autocomplete="name" placeholder="اسمت رو بنویس" required maxlength="100"></div><div class="field"><label for="email">ایمیل برای پاسخ</label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required maxlength="160"></div><div class="field"><label for="message">پیام</label><textarea id="message" name="message" placeholder="پیامت رو اینجا بنویس..." required maxlength="5000"></textarea></div><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><button class="btn primary" id="submitBtn" type="submit">ارسال پیام ✉</button><p class="form-status" id="formStatus" role="status" aria-live="polite"></p></form></div></div></section>
-</main>
-<footer><div class="container"><div class="socials"><a href="#contact">ارتباط</a><span aria-hidden="true">·</span><a href="#projects">پروژه‌ها</a><span aria-hidden="true">·</span><a href="#home">ابتدای صفحه ↑</a></div>ساخته‌شده با کنجکاوی و کمی خلاقیت ✦<br>© <span id="year"></span> فضای کیان</div></footer>
-<script>
-const body=document.body,themeBtn=document.getElementById('themeBtn'),themeMeta=document.querySelector('meta[name="theme-color"]');function setTheme(theme){const light=theme==='light';body.classList.toggle('light',light);themeBtn.textContent=light?'🌙':'☀️';themeBtn.setAttribute('aria-label',light?'فعال‌کردن تم تاریک':'فعال‌کردن تم روشن');themeMeta.setAttribute('content',light?'#f4f7ff':'#080d1d');try{localStorage.setItem('kian-site-theme',theme)}catch(e){}}let savedTheme='dark';try{savedTheme=localStorage.getItem('kian-site-theme')||'dark'}catch(e){}setTheme(savedTheme);themeBtn.addEventListener('click',()=>setTheme(body.classList.contains('light')?'dark':'light'));
-const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰'});navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰'}));document.getElementById('year').textContent=new Date().getFullYear();const revealItems=document.querySelectorAll('.reveal');if('IntersectionObserver'in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1});revealItems.forEach(item=>observer.observe(item))}else{revealItems.forEach(item=>item.classList.add('visible'))}
-const contactForm=document.getElementById('contactForm'),formStatus=document.getElementById('formStatus'),submitBtn=document.getElementById('submitBtn');contactForm.addEventListener('submit',async event=>{event.preventDefault();formStatus.textContent='در حال ارسال پیام...';submitBtn.disabled=true;try{const response=await fetch(contactForm.action,{method:'POST',body:new FormData(contactForm),headers:{'Accept':'application/json'}});if(response.ok){formStatus.textContent='پیامت با موفقیت ارسال شد. ممنونم! ✨';contactForm.reset()}else{formStatus.textContent='ارسال انجام نشد. تنظیمات فرم Formspree رو بررسی کن یا دوباره تلاش کن.'}}catch(error){formStatus.textContent='ارتباط برقرار نشد. اینترنت رو بررسی کن یا بعداً دوباره تلاش کن.'}finally{submitBtn.disabled=false}});
+s=s=>String(s).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
+function updateClock(){
+ const now=new Date();
+ $("#clockDisplay").textContent=faDigits(new Intl.DateTimeFormat("fa-IR",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(now));
+ $("#dateDisplay").textContent=new Intl.DateTimeFormat("fa-IR",{weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(now);
+}
+updateClock();setInterval(updateClock,1000);
+
+// تایمر
+let remaining=300,interval=null;
+const drawTimer=()=>$("#timerDisplay").textContent=String(Math.floor(remaining/60)).padStart(2,"0")+":"+String(remaining%60).padStart(2,"0");
+const stopTimer=()=>{if(interval){clearInterval(interval);interval=null}};
+function getTimerValue(){return Math.max(0,Number($("#mins").value||0)*60+Number($("#secs").value||0))}
+$("#startTimer").onclick=()=>{
+ if(interval)return;
+ if(remaining<=0){remaining=getTimerValue();drawTimer()}
+ if(remaining<=0){$("#timerNotice").textContent="اول زمان بیشتر از صفر وارد کن.";return}
+ $("#timerNotice").textContent="تایمر در حال اجراست.";
+ interval=setInterval(()=>{
+  remaining--;drawTimer();
+  if(remaining<=0){stopTimer();$("#timerNotice").textContent="زمان تموم شد! آفرین 🌟";toast("زمان تمام شد!")}
+ },1000);
+};
+$("#pauseTimer").onclick=()=>{stopTimer();$("#timerNotice").textContent="تایمر متوقف شد."};
+$("#resetTimer").onclick=()=>{stopTimer();remaining=getTimerValue();drawTimer();$("#timerNotice").textContent="تایمر آماده است."};
+["mins","secs"].forEach(id=>$("#"+id).addEventListener("change",()=>{if(!interval){remaining=getTimerValue();drawTimer()}}));
+
+// ساخت QR با سرویس بیرونی
+$("#makeQR").onclick=()=>{
+ const value=$("#qrInput").value.trim(),out=$("#qrResult");out.innerHTML="";
+ if(!value){out.textContent="اول یک لینک یا متن وارد کن.";return}
+ const img=document.createElement("img");
+ img.className="qr";img.alt="کد QR";img.loading="lazy";
+ img.src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="+encodeURIComponent(value);
+ img.onerror=()=>out.textContent="ساخت QR ممکن نشد؛ اتصال اینترنت رو بررسی کن.";
+ const link=document.createElement("a");link.href=img.src;link.target="_blank";link.rel="noopener noreferrer";link.className="btn";link.textContent="باز کردن تصویر QR";
+ out.append(img,link);
+};
+
+// شمارنده
+let count=0;
+const drawCount=()=>$("#countDisplay").textContent=count.toLocaleString("fa-IR");
+$("#plus").onclick=()=>{count++;drawCount()};
+$("#minus").onclick=()=>{count--;drawCount()};
+$("#countReset").onclick=()=>{count=0;drawCount()};
+
+// یادداشت محلی
+try{$("#notesInput").value=localStorage.getItem("orbit-note")||""}catch(e){}
+$("#notesInput").addEventListener("input",()=>{
+ try{localStorage.setItem("orbit-note",$("#notesInput").value)}catch(e){}
+});
+$("#clearNotes").onclick=()=>{
+ $("#notesInput").value="";
+ try{localStorage.removeItem("orbit-note")}catch(e){}
+};
+
+// چالش‌ها
+const questions=[
+ {q:"کدام سیاره به خورشید نزدیک‌تر است؟",a:["زمین","عطارد","مریخ","زحل"],c:1,why:"عطارد نزدیک‌ترین سیاره به خورشید است."},
+ {q:"کدام گزینه ساختار صفحه وب را مشخص می‌کند؟",a:["HTML","MP3","JPEG","PDF"],c:0,why:"HTML ساختار محتوای صفحه وب رو مشخص می‌کنه."},
+ {q:"یک دقیقه چند ثانیه است؟",a:["30","50","60","100"],c:2,why:"هر دقیقه ۶۰ ثانیه داره."},
+ {q:"کدوم گزینه زبان برنامه‌نویسیه؟",a:["JavaScript","Bluetooth","Wi-Fi","USB"],c:0,why:"JavaScript برای ساخت صفحات تعاملی وب استفاده می‌شه."},
+ {q:"بزرگ‌ترین سیاره منظومه شمسی کدام است؟",a:["زمین","مریخ","مشتری","زهره"],c:2,why:"مشتری بزرگ‌ترین سیاره منظومه شمسیه."},
+ {q:"کدوم میان‌بر معمولاً برای کپی استفاده می‌شه؟",a:["Ctrl + C","Ctrl + P","Ctrl + Z","Ctrl + S"],c:0,why:"در بسیاری از برنامه‌ها Ctrl + C برای کپی است."}
+];
+let qi=Math.floor(Date.now()/86400000)%questions.length;
+function renderQuestion(){
+ const q=questions[qi];
+ $("#question").textContent=q.q;
+ $("#quizNotice").textContent="";
+ $("#answers").innerHTML="";
+ q.a.forEach((answer,i)=>{
+  const b=document.createElement("button");
+  b.className="answer";
+  b.textContent=answer;
+  b.onclick=()=>{
+   $$("#answers button").forEach(x=>x.disabled=true);
+   if(i===q.c){
+    b.classList.add("correct");
+    $("#quizNotice").textContent="درست جواب دادی! "+q.why;
+   }else{
+    b.classList.add("wrong");
+    $("#answers button")[q.c].classList.add("correct");
+    $("#quizNotice").textContent="این بار نشد؛ "+q.why;
+   }
+  };
+  $("#answers").append(b);
+ });
+}
+renderQuestion();
+$("#nextQuestion").onclick=()=>{
+ qi=(qi+1)%questions.length;
+ renderQuestion();
+};
+
+// فرم پیشنهادها
+$("#suggestionForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const form=e.currentTarget;
+ const status=$("#formStatus");
+ const button=$("#sendForm");
+ if(!form.reportValidity())return;
+ button.disabled=true;
+ button.textContent="در حال ارسال...";
+ status.textContent="در حال ارسال پیام...";
+ try{
+  const response=await fetch(form.action,{
+   method:"POST",
+   body:new FormData(form),
+   headers:{"Accept":"application/json"}
+  });
+  if(response.ok){
+   status.textContent="پیامت ارسال شد؛ ممنون از همراهی‌ات! ✨";
+   form.reset();
+   toast("پیام ارسال شد!");
+  }else{
+   status.textContent="ارسال نشد؛ تنظیمات Formspree یا اینترنت رو بررسی کن.";
+  }
+ }catch(err){
+  status.textContent="اتصال برقرار نشد؛ اینترنت رو بررسی کن و دوباره امتحان کن.";
+ }finally{
+  button.disabled=false;
+  button.textContent="ارسال پیام ✦";
+ }
+});
+
+filterTools();
+})();
 </script>
 </body>
 </html>
