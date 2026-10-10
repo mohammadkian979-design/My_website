@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سایت من</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background: #0f172a;
+      color: white;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      max-width: 500px;
+      padding: 35px 25px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 24px;
+    }
+    h1 { color: #38bdf8; }
+    p { color: #cbd5e1; line-height: 2; }
+    button {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>به سایت من خوش آمدی! 🚀</h1>
+    <p>این اولین سایت اختصاصی منه.</p>
+    <button onclick="welcome()">اینجا کلیک کن</button>
+    <p id="message"></p>
+  </main>
+
+  <script>
+    function welcome() {
+      document.getElementById("message").textContent =
+        "به زودی امکانات جذابی اضافه می‌کنیم! ✨";
+    }
+  </script>
+</body>
+</html>
