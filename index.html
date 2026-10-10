@@ -1,4 +1,354 @@
-s=s=>String(s).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d20">
+<meta name="description" content="ORBIT؛ مجموعه‌ای از ابزارهای کاربردی، سرگرمی و ابزارهای روزمره">
+<title>ORBIT | دنیای ابزارهای هوشمند</title>
+
+<style>
+:root{
+ --bg:#080d20;
+ --panel:#111a35;
+ --panel2:#172343;
+ --text:#f4f6ff;
+ --muted:#a7b3d3;
+ --blue:#65d8ff;
+ --purple:#9b7bff;
+ --pink:#ff79c6;
+ --border:rgba(160,180,255,.18);
+ --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:
+  radial-gradient(ellipse at 10% 0%,rgba(91,75,190,.18),transparent 38%),
+  radial-gradient(ellipse at 90% 20%,rgba(32,140,200,.12),transparent 32%),
+  var(--bg);
+ color:var(--text);
+ line-height:1.8;
+}
+button,input,textarea,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+header{
+ position:sticky;top:0;z-index:20;
+ background:rgba(8,13,32,.88);
+ backdrop-filter:blur(16px);
+ border-bottom:1px solid var(--border);
+}
+.nav{
+ min-height:70px;display:flex;align-items:center;
+ justify-content:space-between;gap:16px;flex-wrap:wrap;
+ padding:10px 0;
+}
+.logo{font-size:24px;font-weight:900;letter-spacing:3px;color:var(--blue)}
+.logo span{color:var(--purple)}
+#navMenu{display:flex;align-items:center;gap:18px}
+#navMenu a{font-size:14px;color:var(--muted)}
+#navMenu a:hover{color:var(--blue)}
+.btn{
+ border:1px solid var(--border);border-radius:12px;
+ padding:10px 15px;background:var(--panel2);
+ color:var(--text);display:inline-flex;align-items:center;
+ justify-content:center;gap:7px;transition:.2s;
+}
+.btn:hover{transform:translateY(-2px);border-color:var(--blue)}
+.btn.primary{
+ color:#07101e;border:0;font-weight:bold;
+ background:linear-gradient(110deg,var(--blue),#a9a0ff);
+}
+#menuToggle{display:none}
+.hero{padding:65px 0 42px;text-align:center}
+.eyebrow{color:var(--blue);font-size:13px;letter-spacing:2px}
+h1{font-size:clamp(34px,7vw,65px);line-height:1.35;margin:14px 0}
+.gradient{
+ background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);max-width:650px;margin:0 auto 24px}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.planet{
+ width:130px;height:130px;margin:32px auto 0;border-radius:50%;
+ background:radial-gradient(circle at 30% 25%,#e2f8ff,#6c8dff 28%,#5a36a8 65%,#171538);
+ box-shadow:0 0 45px rgba(101,216,255,.22),inset -16px -12px 30px #080d20;
+ position:relative;animation:float 5s ease-in-out infinite;
+}
+.planet:after{
+ content:"";position:absolute;width:170px;height:38px;
+ border:5px solid rgba(180,164,255,.65);border-radius:50%;
+ left:-25px;top:45px;transform:rotate(-25deg);
+}
+@keyframes float{50%{transform:translateY(-9px)}}
+section{padding:34px 0}
+.section-head{margin-bottom:20px}
+.section-head h2{font-size:clamp(23px,4vw,32px);margin:0 0 5px}
+.section-head p{margin:0;color:var(--muted);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stat,.tool,.panel{
+ background:linear-gradient(145deg,rgba(23,35,67,.92),rgba(13,21,44,.96));
+ border:1px solid var(--border);border-radius:var(--radius);
+ padding:20px;min-width:0;
+}
+.stat{text-align:center}
+.stat strong{display:block;font-size:24px;color:var(--blue)}
+.stat span{font-size:13px;color:var(--muted)}
+.search-wrap{display:flex;gap:10px;margin:20px 0}
+input,textarea,select{
+ width:100%;min-width:0;background:#090f24;color:var(--text);
+ border:1px solid var(--border);border-radius:12px;padding:12px;
+ outline:none;
+}
+input:focus,textarea:focus,select:focus{border-color:var(--blue)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filters button{border:1px solid var(--border);border-radius:999px;padding:8px 14px;background:transparent;color:var(--muted)}
+.filters button.active{background:var(--blue);color:#07101e;border-color:var(--blue)}
+.tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tool{display:flex;flex-direction:column;gap:10px}
+.tool[hidden]{display:none}
+.tool-icon{font-size:28px}
+.tool h3{margin:0;font-size:18px}
+.tool p{margin:0;color:var(--muted);font-size:13px}
+.tool label{font-size:13px;color:var(--muted)}
+.tool textarea{min-height:90px;resize:vertical}
+.tool-actions{display:flex;gap:8px;flex-wrap:wrap}
+.tool-actions .btn{flex:1}
+.result{color:var(--blue);font-size:14px;overflow-wrap:anywhere}
+.clock-time{font-size:32px;font-weight:bold;color:var(--blue);direction:ltr;text-align:center}
+.clock-date{text-align:center;color:var(--muted);font-size:13px}
+.timer-display{font-size:40px;font-weight:bold;text-align:center;direction:ltr}
+.counter-display{text-align:center;font-size:34px;color:var(--blue)}
+.qr{display:block;max-width:220px;width:100%;margin:10px auto;background:white;padding:8px;border-radius:10px}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.answer{border:1px solid var(--border);border-radius:10px;background:var(--panel2);color:var(--text);padding:10px}
+.answer.correct{border-color:#4de0a0;background:rgba(30,150,100,.2)}
+.answer.wrong{border-color:#ff7d9d;background:rgba(200,50,90,.2)}
+.notice{font-size:13px;color:var(--muted);min-height:24px}
+#emptyTools{grid-column:1/-1;color:var(--muted);text-align:center;padding:25px}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
+#toast{
+ position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);
+ opacity:0;pointer-events:none;background:var(--panel2);
+ border:1px solid var(--border);border-radius:12px;padding:10px 18px;
+ z-index:50;transition:.2s;max-width:calc(100% - 30px);text-align:center;
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#backToTop{
+ position:fixed;bottom:20px;right:16px;z-index:15;
+ display:none;border-radius:50%;width:44px;height:44px;
+ background:var(--blue);color:#07101e;border:0;font-size:20px;
+}
+#backToTop.show{display:block}
+body.light-mode{
+ --bg:#f3f6ff;--panel:#fff;--panel2:#e8edff;
+ --text:#17203b;--muted:#56617e;--border:rgba(55,75,130,.2);
+ background:var(--bg);
+}
+body.light-mode header{background:rgba(243,246,255,.92)}
+body.light-mode input,body.light-mode textarea,body.light-mode select{background:#fff;color:#17203b}
+body.light-mode .answer{color:#17203b}
+@media(max-width:760px){
+ .container{width:calc(100% - 24px)}
+ #menuToggle{display:inline-flex}
+ #navMenu{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 12px;gap:4px}
+ #navMenu.open{display:flex}
+ #navMenu a{padding:8px}
+ .nav{gap:8px}
+ .hero{padding:40px 0 25px}
+ .tools-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .tool{padding:14px;border-radius:15px}
+ .stats{gap:8px}
+ .stat{padding:12px 5px}
+ .stat strong{font-size:20px}
+ .search-wrap{flex-direction:column}
+}
+@media(max-width:430px){
+ .tools-grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr}
+ .stat{display:flex;align-items:center;justify-content:space-between;text-align:right;padding:12px 16px}
+ .planet{width:100px;height:100px}
+ .planet:after{width:135px;height:30px;left:-22px;top:35px}
+ .answers{grid-template-columns:1fr}
+ h1{font-size:35px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="logo" href="#home">OR<span>BIT</span> ✦</a>
+  <button class="btn" id="menuToggle" aria-expanded="false" aria-label="باز کردن منو">☰ منو</button>
+  <nav id="navMenu">
+   <a href="#home">خانه</a>
+   <a href="#tools">ابزارها</a>
+   <a href="#challenge">چالش روز</a>
+   <a href="#suggestions">پیشنهادها</a>
+   <button class="btn" id="themeToggle" type="button" aria-label="تغییر تم">☀️</button>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero container" id="home">
+ <div class="eyebrow">✦ یک جهان، کلی امکان ✦</div>
+ <h1>به دنیای <span class="gradient">ORBIT</span> خوش اومدی</h1>
+ <p>ابزارهای کاربردی، سرگرمی‌های کوتاه و امکانات روزمره؛ همه در یک فضای جمع‌وجور و مناسب گوشی.</p>
+ <div class="hero-actions">
+  <a class="btn primary" href="#tools">کشف ابزارها ✦</a>
+  <a class="btn" href="#challenge">شروع چالش روز 🎯</a>
+ </div>
+ <div class="planet" aria-hidden="true"></div>
+</section>
+
+<section class="container">
+ <div class="stats">
+  <div class="stat"><strong>۶+</strong><span>ابزار کاربردی</span></div>
+  <div class="stat"><strong>۲۴/۷</strong><span>همیشه در دسترس</span></div>
+  <div class="stat"><strong>∞</strong><span>ایده‌های تازه</span></div>
+ </div>
+</section>
+
+<section class="container" id="tools">
+ <div class="section-head">
+  <h2>جعبه‌ابزار <span class="gradient">ORBIT</span></h2>
+  <p>ابزار موردنظرت رو جست‌وجو کن یا از دسته‌بندی‌ها استفاده کن.</p>
+ </div>
+ <div class="search-wrap">
+  <input id="searchInput" type="search" placeholder="جست‌وجوی ابزار..." aria-label="جست‌وجوی ابزار">
+ </div>
+ <div class="filters">
+  <button type="button" class="active" data-category="all">همه</button>
+  <button type="button" data-category="time">زمان</button>
+  <button type="button" data-category="text">متن</button>
+  <button type="button" data-category="utility">کاربردی</button>
+  <button type="button" data-category="fun">سرگرمی</button>
+ </div>
+
+ <div class="tools-grid" id="grid">
+  <article class="tool" data-tool-category="time">
+   <div class="tool-icon">🕒</div><h3>ساعت زنده</h3>
+   <p>ساعت و تاریخ امروز</p>
+   <div class="clock-time" id="clockDisplay">۰۰:۰۰:۰۰</div>
+   <div class="clock-date" id="dateDisplay">در حال بارگذاری...</div>
+  </article>
+
+  <article class="tool" data-tool-category="time">
+   <div class="tool-icon">⏳</div><h3>تایمر</h3>
+   <p>زمان دلخواهت رو تنظیم کن.</p>
+   <div class="timer-display" id="timerDisplay">05:00</div>
+   <div class="tool-actions">
+    <input id="mins" type="number" min="0" max="999" value="5" aria-label="دقیقه">
+    <input id="secs" type="number" min="0" max="59" value="0" aria-label="ثانیه">
+   </div>
+   <div class="tool-actions">
+    <button class="btn primary" id="startTimer" type="button">شروع</button>
+    <button class="btn" id="pauseTimer" type="button">توقف</button>
+    <button class="btn" id="resetTimer" type="button">بازنشانی</button>
+   </div>
+   <div class="notice" id="timerNotice">تایمر آماده است.</div>
+  </article>
+
+  <article class="tool" data-tool-category="utility">
+   <div class="tool-icon">🔢</div><h3>شمارنده</h3>
+   <p>برای شمردن هر چیزی که می‌خوای.</p>
+   <div class="counter-display" id="countDisplay">۰</div>
+   <div class="tool-actions">
+    <button class="btn primary" id="plus" type="button">+۱</button>
+    <button class="btn" id="minus" type="button">−۱</button>
+    <button class="btn" id="countReset" type="button">صفر</button>
+   </div>
+  </article>
+
+  <article class="tool" data-tool-category="utility">
+   <div class="tool-icon">🔳</div><h3>ساخت QR</h3>
+   <p>متن یا لینک رو به کد QR تبدیل کن.</p>
+   <input id="qrInput" type="text" placeholder="لینک یا متن..." aria-label="متن کد QR">
+   <button class="btn primary" id="makeQR" type="button">ساخت کد QR</button>
+   <div id="qrResult" class="result"></div>
+  </article>
+
+  <article class="tool" data-tool-category="text">
+   <div class="tool-icon">📝</div><h3>شمارش کلمات</h3>
+   <p>تعداد کلمات و نویسه‌ها رو ببین.</p>
+   <textarea id="wordInput" placeholder="متنت رو اینجا بنویس..." aria-label="متن برای شمارش"></textarea>
+   <div class="result" id="wordResult">کلمه: ۰ | نویسه: ۰</div>
+  </article>
+
+  <article class="tool" data-tool-category="text">
+   <div class="tool-icon">🔠</div><h3>تبدیل متن</h3>
+   <p>فاصله‌های اضافی رو حذف کن یا متن رو کپی کن.</p>
+   <textarea id="textInput" placeholder="متن موردنظر..." aria-label="متن برای تبدیل"></textarea>
+   <div class="tool-actions">
+    <button class="btn" id="cleanText" type="button">مرتب‌سازی</button>
+    <button class="btn primary" id="copyText" type="button">کپی متن</button>
+   </div>
+   <div class="notice" id="textNotice"></div>
+  </article>
+
+  <article class="tool" data-tool-category="utility">
+   <div class="tool-icon">📒</div><h3>یادداشت سریع</h3>
+   <p>یادداشتت در همین مرورگر ذخیره می‌شه.</p>
+   <textarea id="notesInput" placeholder="یادداشتت رو بنویس..." aria-label="یادداشت"></textarea>
+   <button class="btn" id="clearNotes" type="button">پاک‌کردن یادداشت</button>
+  </article>
+ </div>
+</section>
+
+<section class="container" id="challenge">
+ <div class="section-head">
+  <h2>چالش روزانه 🎯</h2>
+  <p>به سؤال جواب بده و یک نکته تازه یاد بگیر.</p>
+ </div>
+ <div class="panel">
+  <h3 id="question">سؤال در حال بارگذاری...</h3>
+  <div class="answers" id="answers"></div>
+  <p class="notice" id="quizNotice"></p>
+  <button class="btn primary" id="nextQuestion" type="button">سؤال بعدی ←</button>
+ </div>
+</section>
+
+<section class="container" id="suggestions">
+ <div class="section-head">
+  <h2>پیشنهادها و بازخوردها 💌</h2>
+  <p>ایده‌ها، ایرادها یا نظرت رو برای بهتر شدن ORBIT بفرست.</p>
+ </div>
+ <form class="panel" id="suggestionForm" action="https://formspree.io/f/xyekjjak" method="POST">
+  <label for="senderName">اسم (اختیاری)</label>
+  <input id="senderName" name="name" placeholder="اسمت..." autocomplete="name">
+  <label for="senderEmail">ایمیل (اختیاری)</label>
+  <input id="senderEmail" name="email" type="email" placeholder="ایمیل برای پاسخ">
+  <label for="messageType">نوع پیام</label>
+  <select id="messageType" name="type">
+   <option value="پیشنهاد">پیشنهاد</option>
+   <option value="گزارش مشکل">گزارش مشکل</option>
+   <option value="نظر">نظر</option>
+  </select>
+  <label for="message">پیامت</label>
+  <textarea id="message" name="message" required placeholder="اینجا بنویس..." rows="5"></textarea>
+  <button class="btn primary" id="sendForm" type="submit">ارسال پیام ✦</button>
+  <p class="notice" id="formStatus" aria-live="polite"></p>
+ </form>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="logo">OR<span>BIT</span> ✦</div>
+  <p>ساخته‌شده برای ایده‌های بزرگ و کارهای روزمره.</p>
+  <p>© <span id="year"></span> ORBIT</p>
+ </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<button id="backToTop" type="button" aria-label="رفتن به بالای صفحه">↑</button>
+
+<script>s=s=>String(s).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
 function updateClock(){
  const now=new Date();
  $("#clockDisplay").textContent=faDigits(new Intl.DateTimeFormat("fa-IR",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(now));
