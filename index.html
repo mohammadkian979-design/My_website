@@ -4,83 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101321">
-<meta name="description" content="وب‌سایت شخصی با مجموعه‌ای از ابزارهای کاربردی، سریع و رایگان">
-<title>ORBIT | ابزارهای کاربردی</title>
-
+<meta name="description" content="NEXO؛ مجموعه‌ای از ابزارهای کاربردی، سریع و رایگان">
+<title>NEXO | ابزارهای کاربردی</title>
 <style>
 :root{
-  --bg:#0b0d17;
-  --panel:#141827;
-  --panel2:#1b2033;
-  --text:#f4f5ff;
-  --muted:#a3abc4;
-  --accent:#8b7cff;
-  --accent2:#45d9c5;
-  --border:rgba(255,255,255,.09);
-  --shadow:0 12px 35px rgba(0,0,0,.2);
+  --bg:#0b0d17;--panel:#141827;--panel2:#1b2033;
+  --text:#f4f5ff;--muted:#a3abc4;--accent:#8b7cff;
+  --accent2:#45d9c5;--border:rgba(255,255,255,.09);
+  --shadow:0 12px 35px rgba(0,0,0,.2)
 }
 body.light{
-  --bg:#f4f6fc;
-  --panel:#fff;
-  --panel2:#edf0fa;
-  --text:#20243a;
-  --muted:#68708a;
-  --accent:#6654df;
-  --accent2:#008e80;
-  --border:rgba(30,35,65,.12);
-  --shadow:0 12px 35px rgba(40,50,90,.08);
+  --bg:#f4f6fc;--panel:#fff;--panel2:#edf0fa;
+  --text:#20243a;--muted:#68708a;--accent:#6654df;
+  --accent2:#008e80;--border:rgba(30,35,65,.12);
+  --shadow:0 12px 35px rgba(40,50,90,.08)
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Tahoma,Arial,sans-serif;line-height:1.8;
-  transition:background .2s,color .2s;
-}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8;transition:background .2s,color .2s}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 a{color:inherit;text-decoration:none}
-button:focus-visible,input:focus-visible,textarea:focus-visible{
-  outline:2px solid var(--accent2);outline-offset:3px
-}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .container{width:min(1100px,calc(100% - 32px));margin:auto}
-header{
-  position:sticky;top:0;z-index:20;
-  background:var(--bg);border-bottom:1px solid var(--border)
-}
-.nav{
-  min-height:70px;display:flex;align-items:center;
-  justify-content:space-between;gap:16px
-}
-.logo{font-size:23px;font-weight:900;letter-spacing:1px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}
 .logo span{color:var(--accent)}
 .nav-links{display:flex;gap:22px;align-items:center}
 .nav-links a{font-size:13px;color:var(--muted)}
 .nav-links a:hover{color:var(--accent2)}
 .nav-actions{display:flex;gap:8px}
-.icon-btn,.menu-btn{
-  background:var(--panel2);color:var(--text);
-  border:1px solid var(--border);border-radius:12px;
-  width:42px;height:42px
-}
+.icon-btn,.menu-btn{background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:12px;width:42px;height:42px}
 .menu-btn{display:none}
 .hero{padding:58px 0 32px;text-align:center}
-.pill{
-  display:inline-block;border:1px solid var(--border);
-  background:var(--panel);padding:5px 13px;border-radius:30px;
-  font-size:12px;color:var(--accent2)
-}
+.pill{display:inline-block;border:1px solid var(--border);background:var(--panel);padding:5px 13px;border-radius:30px;font-size:12px;color:var(--accent2)}
 .hero h1{font-size:clamp(30px,6vw,52px);line-height:1.45;margin:18px 0 8px}
-.gradient{
-  background:linear-gradient(100deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
+.gradient{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--muted);max-width:600px;margin:0 auto 22px;font-size:14px}
-.clock-card{
-  max-width:420px;margin:25px auto 0;padding:20px;
-  border:1px solid var(--border);border-radius:20px;
-  background:var(--panel);box-shadow:var(--shadow)
-}
+.clock-card{max-width:420px;margin:25px auto 0;padding:20px;border:1px solid var(--border);border-radius:20px;background:var(--panel);box-shadow:var(--shadow)}
 .clock{font-size:34px;font-weight:bold;direction:ltr}
 .date{color:var(--muted);font-size:13px}
 .section{padding:30px 0}
@@ -88,132 +50,73 @@ header{
 .section-head h2{margin:0;font-size:24px}
 .section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .search-wrap{margin:18px 0}
-.search{
-  width:100%;padding:14px 17px;background:var(--panel);
-  color:var(--text);border:1px solid var(--border);
-  border-radius:15px
-}
+.search{width:100%;padding:14px 17px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:15px}
 .categories{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 22px}
-.category{
-  padding:8px 15px;border:1px solid var(--border);
-  border-radius:30px;background:var(--panel);color:var(--muted);
-  font-size:12px
-}
-.category.active,.category:hover{
-  background:var(--accent);color:white;border-color:var(--accent)
-}
-.tools-grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px
-}
-.tool{
-  min-width:0;background:var(--panel);border:1px solid var(--border);
-  border-radius:18px;padding:19px;box-shadow:var(--shadow)
-}
+.category{padding:8px 15px;border:1px solid var(--border);border-radius:30px;background:var(--panel);color:var(--muted);font-size:12px}
+.category.active,.category:hover{background:var(--accent);color:white;border-color:var(--accent)}
+.tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.tool{min-width:0;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:19px;box-shadow:var(--shadow)}
 .tool[hidden]{display:none!important}
 .tool h3{font-size:16px;margin:0 0 4px}
 .tool p{color:var(--muted);font-size:12px;margin:0 0 15px}
-.tool-icon{
-  width:42px;height:42px;display:grid;place-items:center;
-  border-radius:13px;background:var(--panel2);font-size:22px;
-  margin-bottom:12px
-}
-.field{
-  width:100%;min-width:0;padding:11px 12px;
-  border:1px solid var(--border);border-radius:11px;
-  background:var(--bg);color:var(--text);margin:5px 0 9px
-}
+.tool-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:var(--panel2);font-size:22px;margin-bottom:12px}
+.field{width:100%;min-width:0;padding:11px 12px;border:1px solid var(--border);border-radius:11px;background:var(--bg);color:var(--text);margin:5px 0 9px}
 textarea.field{resize:vertical;min-height:90px}
-.btn{
-  border:0;background:var(--accent);color:white;
-  border-radius:11px;padding:10px 14px;font-size:12px;
-  font-weight:bold
-}
+.btn{border:0;background:var(--accent);color:white;border-radius:11px;padding:10px 14px;font-size:12px;font-weight:bold}
 .btn:hover{filter:brightness(1.1)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
 .btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border)}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap}
 .btn-row .btn{flex:1}
-.output{
-  padding:10px;background:var(--panel2);border-radius:10px;
-  font-size:13px;overflow-wrap:anywhere;margin-top:10px
-}
+.output{padding:10px;background:var(--panel2);border-radius:10px;font-size:13px;overflow-wrap:anywhere;margin-top:10px;white-space:pre-wrap}
 .big-number{text-align:center;font-size:32px;font-weight:bold;padding:8px}
 .muted{color:var(--muted);font-size:12px}
 .notice{font-size:12px;color:var(--accent2);min-height:22px;margin-top:6px}
-.answer-btn{
-  display:block;width:100%;text-align:right;margin:8px 0;
-  padding:10px;border:1px solid var(--border);
-  border-radius:10px;background:var(--panel2);color:var(--text)
-}
+.answer-btn{display:block;width:100%;text-align:right;margin:8px 0;padding:10px;border:1px solid var(--border);border-radius:10px;background:var(--panel2);color:var(--text)}
 .answer-btn:hover{border-color:var(--accent)}
-.empty{
-  grid-column:1/-1;text-align:center;padding:25px;
-  color:var(--muted);background:var(--panel);border-radius:14px
-}
-.about-box{
-  padding:25px;background:var(--panel);
-  border:1px solid var(--border);border-radius:20px
-}
+.empty{grid-column:1/-1;text-align:center;padding:25px;color:var(--muted);background:var(--panel);border-radius:14px}
+.about-box{padding:25px;background:var(--panel);border:1px solid var(--border);border-radius:20px}
 .about-box p{color:var(--muted);font-size:14px}
+.profile{display:grid;grid-template-columns:100px 1fr;gap:22px;align-items:center}
+.profile-avatar{width:100px;height:100px;display:grid;place-items:center;border-radius:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;font-size:38px;font-weight:900;box-shadow:var(--shadow)}
+.profile h3{font-size:22px;margin:0 0 6px}
+.profile p{margin:0 0 8px}
+.profile-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.profile-tags span{background:var(--panel2);padding:5px 10px;border-radius:20px;font-size:11px;color:var(--accent2)}
 footer{border-top:1px solid var(--border);margin-top:35px;padding:25px 0}
 .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 footer p{margin:0;color:var(--muted);font-size:12px}
-#toast{
-  position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
-  background:var(--panel2);color:var(--text);
-  border:1px solid var(--border);border-radius:12px;
-  padding:10px 18px;box-shadow:var(--shadow);
-  opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;
-  max-width:90%;text-align:center;font-size:13px
-}
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:10px 18px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;max-width:90%;text-align:center;font-size:13px}
 #toast.show{opacity:1}
-#backToTop{
-  position:fixed;bottom:22px;right:18px;z-index:15;
-  display:none;width:42px;height:42px;border-radius:13px;
-  border:1px solid var(--border);background:var(--panel2);color:var(--text)
-}
+#backToTop{position:fixed;bottom:22px;right:18px;z-index:15;display:none;width:42px;height:42px;border-radius:13px;border:1px solid var(--border);background:var(--panel2);color:var(--text)}
 #backToTop.show{display:block}
 .qr-result img{display:block;max-width:180px;width:100%;margin:12px auto;border-radius:8px}
-@media(max-width:800px){
-  .tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nav-links{gap:12px}
-}
+hr{border:0;border-top:1px solid var(--border);margin:16px 0}
+@media(max-width:800px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-links{gap:12px}}
 @media(max-width:600px){
-  .container{width:calc(100% - 24px)}
-  .nav{min-height:62px}
-  .menu-btn{display:block}
-  .nav-links{
-    display:none;position:absolute;top:62px;right:12px;left:12px;
-    padding:15px;background:var(--panel);border:1px solid var(--border);
-    border-radius:15px;flex-direction:column;align-items:stretch;gap:0
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:10px 5px}
-  .hero{padding:35px 0 18px}
-  .hero h1{font-size:30px}
-  .clock-card{padding:15px}
-  .clock{font-size:29px}
-  .section{padding:22px 0}
-  .section-head h2{font-size:21px}
-  .tools-grid{grid-template-columns:minmax(0,1fr);gap:12px}
-  .tool{padding:16px}
-  .categories{gap:7px}
-  .category{padding:7px 11px}
+.container{width:calc(100% - 24px)}.nav{min-height:62px}.menu-btn{display:block}
+.nav-links{display:none;position:absolute;top:62px;right:12px;left:12px;padding:15px;background:var(--panel);border:1px solid var(--border);border-radius:15px;flex-direction:column;align-items:stretch;gap:0}
+.nav-links.open{display:flex}.nav-links a{padding:10px 5px}
+.hero{padding:35px 0 18px}.hero h1{font-size:30px}.clock-card{padding:15px}.clock{font-size:29px}
+.section{padding:22px 0}.section-head h2{font-size:21px}
+.tools-grid{grid-template-columns:minmax(0,1fr);gap:12px}.tool{padding:16px}
+.categories{gap:7px}.category{padding:7px 11px}
+.profile{grid-template-columns:1fr;text-align:center}.profile-avatar{margin:auto}
+.profile-tags{justify-content:center}
 }
 </style>
 </head>
-
 <body>
 <header>
   <div class="container nav">
-    <a class="logo" href="#home">OR<span>BIT</span></a>
-
+    <a class="logo" href="#home">NE<span>XO</span></a>
     <nav class="nav-links" id="navMenu">
       <a href="#home">خانه</a>
       <a href="#tools">ابزارها</a>
       <a href="#about">درباره سایت</a>
+      <a href="#profile">درباره من</a>
       <a href="#contact">پیشنهادها</a>
     </nav>
-
     <div class="nav-actions">
       <button class="icon-btn" id="themeToggle" aria-label="تغییر پوسته">☀️</button>
       <button class="menu-btn" id="menuToggle" aria-label="باز کردن منو">☰</button>
@@ -223,10 +126,9 @@ footer p{margin:0;color:var(--muted);font-size:12px}
 
 <main>
 <section class="hero container" id="home">
-  <span class="pill">✦ فضای ابزارهای روزمره</span>
-  <h1>همه‌چیز برای کارهای روزانه،<br><span class="gradient">در یک نقطه</span></h1>
-  <p>ابزارهای کاربردی و ساده برای متن، زمان، یادداشت و کارهای روزمره؛ بدون نیاز به نصب برنامه.</p>
-
+  <span class="pill">✦ به دنیای NEXO خوش اومدی</span>
+  <h1>ابزارهای کاربردی،<br><span class="gradient">همه در یک نقطه</span></h1>
+  <p>مجموعه‌ای از ابزارهای ساده و کاربردی برای متن، زمان، درس و کارهای روزمره؛ بدون نیاز به نصب برنامه.</p>
   <div class="clock-card">
     <div class="muted">ساعت محلی دستگاه شما</div>
     <div class="clock" id="clockDisplay">۰۰:۰۰:۰۰</div>
@@ -236,31 +138,28 @@ footer p{margin:0;color:var(--muted);font-size:12px}
 
 <section class="section container" id="tools">
   <div class="section-head">
-    <h2>ابزارهای من</h2>
-    <p>ابزار موردنظرت رو پیدا کن و مستقیم استفاده کن.</p>
+    <h2>ابزارهای NEXO</h2>
+    <p>ابزار موردنظرت رو جست‌وجو کن و مستقیم ازش استفاده کن.</p>
   </div>
-
   <div class="search-wrap">
-    <input class="search" id="searchInput" type="search"
-      placeholder="🔎 جست‌وجوی ابزار..." aria-label="جست‌وجوی ابزار">
+    <input class="search" id="searchInput" type="search" placeholder="🔎 جست‌وجوی ابزار..." aria-label="جست‌وجوی ابزار">
   </div>
-
   <div class="categories">
     <button class="category active" data-category="all">همه ابزارها</button>
     <button class="category" data-category="text">ابزار متن</button>
     <button class="category" data-category="time">زمان و تمرکز</button>
     <button class="category" data-category="utility">ابزارهای کاربردی</button>
+    <button class="category" data-category="study">درس و برنامه‌ریزی</button>
     <button class="category" data-category="fun">سرگرمی</button>
   </div>
 
   <div class="tools-grid" id="grid">
-
     <article class="tool" data-tool-category="text">
       <div class="tool-icon">📝</div>
       <h3>شمارش متن</h3>
-      <p>تعداد کلمات، حروف و جمله‌های متن رو بشمار.</p>
+      <p>تعداد کلمات، حروف، حروف بدون فاصله و جمله‌ها.</p>
       <textarea class="field" id="wordInput" placeholder="متنت رو اینجا بنویس..."></textarea>
-      <div class="output" id="wordStats">کلمات: ۰ | حروف: ۰ | جمله‌ها: ۰</div>
+      <div class="output" id="wordStats">کلمات: ۰ | حروف: ۰ | بدون فاصله: ۰ | جمله‌ها: ۰</div>
     </article>
 
     <article class="tool" data-tool-category="text">
@@ -288,19 +187,49 @@ footer p{margin:0;color:var(--muted);font-size:12px}
       <button class="btn secondary" id="copyCase">کپی نتیجه</button>
     </article>
 
+    <article class="tool" data-tool-category="text">
+      <div class="tool-icon">🔢</div>
+      <h3>تبدیل اعداد</h3>
+      <p>اعداد فارسی، عربی و انگلیسی رو تبدیل کن.</p>
+      <textarea class="field" id="digitsInput" placeholder="متنی شامل عدد بنویس..."></textarea>
+      <div class="btn-row">
+        <button class="btn" id="digitsFa">فارسی</button>
+        <button class="btn secondary" id="digitsEn">انگلیسی</button>
+      </div>
+      <textarea class="field" id="digitsOutput" readonly placeholder="نتیجه..."></textarea>
+      <button class="btn secondary" id="copyDigits">کپی نتیجه</button>
+    </article>
+
+    <article class="tool" data-tool-category="text">
+      <div class="tool-icon">↔️</div>
+      <h3>مقایسه دو متن</h3>
+      <p>متن اول و دوم رو با هم مقایسه کن.</p>
+      <textarea class="field" id="compareA" placeholder="متن اول..."></textarea>
+      <textarea class="field" id="compareB" placeholder="متن دوم..."></textarea>
+      <button class="btn" id="compareBtn">مقایسه متن‌ها</button>
+      <div class="output" id="compareOutput">نتیجه مقایسه اینجا نمایش داده می‌شه.</div>
+    </article>
+
+    <article class="tool" data-tool-category="text">
+      <div class="tool-icon">📋</div>
+      <h3>مرتب‌سازی و حذف تکراری‌ها</h3>
+      <p>خط‌های تکراری رو حذف یا خطوط رو مرتب کن.</p>
+      <textarea class="field" id="linesInput" placeholder="هر مورد رو در یک خط بنویس..."></textarea>
+      <div class="btn-row">
+        <button class="btn" id="uniqueLines">حذف تکراری‌ها</button>
+        <button class="btn secondary" id="sortLines">مرتب‌سازی الفبایی</button>
+      </div>
+      <textarea class="field" id="linesOutput" readonly placeholder="نتیجه..."></textarea>
+      <button class="btn secondary" id="copyLines">کپی نتیجه</button>
+    </article>
+
     <article class="tool" data-tool-category="time">
       <div class="tool-icon">⏱️</div>
       <h3>تایمر</h3>
       <p>مدت دلخواهت رو تنظیم کن و شروع کن.</p>
       <div class="btn-row">
-        <div>
-          <label class="muted" for="mins">دقیقه</label>
-          <input class="field" id="mins" type="number" min="0" max="999" value="5">
-        </div>
-        <div>
-          <label class="muted" for="secs">ثانیه</label>
-          <input class="field" id="secs" type="number" min="0" max="59" value="0">
-        </div>
+        <div><label class="muted" for="mins">دقیقه</label><input class="field" id="mins" type="number" min="0" max="999" value="5"></div>
+        <div><label class="muted" for="secs">ثانیه</label><input class="field" id="secs" type="number" min="0" max="59" value="0"></div>
       </div>
       <div class="big-number" id="timerDisplay">۰۵:۰۰</div>
       <div class="btn-row">
@@ -309,6 +238,17 @@ footer p{margin:0;color:var(--muted);font-size:12px}
         <button class="btn secondary" id="resetTimer">بازنشانی</button>
       </div>
       <div class="notice" id="timerNotice"></div>
+    </article>
+
+    <article class="tool" data-tool-category="time">
+      <div class="tool-icon">🍅</div>
+      <h3>تایمر تمرکز</h3>
+      <p>برای مطالعه و استراحت زمان‌بندی کن.</p>
+      <div class="btn-row">
+        <button class="btn" id="focus25">مطالعه ۲۵ دقیقه</button>
+        <button class="btn secondary" id="break5">استراحت ۵ دقیقه</button>
+      </div>
+      <div class="output" id="focusStatus">یک حالت رو انتخاب کن؛ تایمر اصلی تنظیم می‌شه.</div>
     </article>
 
     <article class="tool" data-tool-category="utility">
@@ -326,7 +266,7 @@ footer p{margin:0;color:var(--muted);font-size:12px}
     <article class="tool" data-tool-category="utility">
       <div class="tool-icon">📒</div>
       <h3>یادداشت سریع</h3>
-      <p>یادداشتت در همین مرورگر ذخیره می‌شه.</p>
+      <p>یادداشتت به‌صورت خودکار در همین مرورگر ذخیره می‌شه.</p>
       <textarea class="field" id="notesInput" placeholder="یادداشتت رو بنویس..."></textarea>
       <div class="btn-row">
         <button class="btn" id="saveNotes">ذخیره یادداشت</button>
@@ -338,14 +278,44 @@ footer p{margin:0;color:var(--muted);font-size:12px}
     <article class="tool" data-tool-category="utility">
       <div class="tool-icon">🔳</div>
       <h3>ساخت QR Code</h3>
-      <p>لینک یا متن رو وارد کن تا کد QR بسازی.</p>
+      <p>از لینک یا متن دلخواهت کد QR بساز.</p>
       <input class="field" id="qrInput" placeholder="مثلاً https://example.com">
       <button class="btn" id="makeQR">ساخت QR Code</button>
       <div class="qr-result" id="qrResult"></div>
-      <div class="muted">برای ساخت تصویر QR، اتصال اینترنت لازم است.</div>
+      <div class="muted">برای ساخت تصویر QR اتصال اینترنت لازم است.</div>
     </article>
 
-    <article class="tool" data-tool-category="fun">
+    <article class="tool" data-tool-category="utility">
+      <div class="tool-icon">💯</div>
+      <h3>محاسبه درصد و تخفیف</h3>
+      <p>مقدار درصد یا قیمت بعد از تخفیف رو حساب کن.</p>
+      <label class="muted" for="percentBase">عدد اصلی یا قیمت</label>
+      <input class="field" id="percentBase" type="number" placeholder="مثلاً ۵۰۰۰۰">
+      <label class="muted" for="percentRate">درصد</label>
+      <input class="field" id="percentRate" type="number" placeholder="مثلاً ۲۰">
+      <button class="btn" id="calcPercent">محاسبه</button>
+      <div class="output" id="percentOutput">نتیجه اینجا نمایش داده می‌شه.</div>
+    </article>
+
+    <article class="tool" data-tool-category="utility">
+      <div class="tool-icon">📐</div>
+      <h3>ماشین‌حساب</h3>
+      <p>محاسبات ساده ریاضی رو انجام بده.</p>
+      <input class="field" id="calcA" type="number" placeholder="عدد اول">
+      <select class="field" id="calcOp">
+        <option value="+">جمع (+)</option>
+        <option value="-">تفریق (−)</option>
+        <option value="*">ضرب (×)</option>
+        <option value="/">تقسیم (÷)</option>
+        <option value="%">باقی‌مانده (%)</option>
+        <option value="pow">توان</option>
+      </select>
+      <input class="field" id="calcB" type="number" placeholder="عدد دوم">
+      <button class="btn" id="calculate">محاسبه</button>
+      <div class="output" id="calcOutput">نتیجه اینجا نمایش داده می‌شه.</div>
+    </article>
+
+    <article class="tool" data-tool-category="utility">
       <div class="tool-icon">🎲</div>
       <h3>عدد تصادفی</h3>
       <p>یک عدد تصادفی در بازه دلخواه تولید کن.</p>
@@ -357,6 +327,41 @@ footer p{margin:0;color:var(--muted);font-size:12px}
       <div class="output" id="randomOutput">عددت اینجا نمایش داده می‌شه.</div>
     </article>
 
+    <article class="tool" data-tool-category="study">
+      <div class="tool-icon">📚</div>
+      <h3>برنامه‌ریز کارها</h3>
+      <p>کارهای امروزت رو بنویس و انجام‌شدنشون رو علامت بزن.</p>
+      <input class="field" id="taskInput" placeholder="مثلاً مرور علوم">
+      <button class="btn" id="addTask">افزودن کار</button>
+      <div id="taskList"></div>
+      <div class="notice" id="taskNotice"></div>
+    </article>
+
+    <article class="tool" data-tool-category="study">
+      <div class="tool-icon">🗂️</div>
+      <h3>فلش‌کارت آموزشی</h3>
+      <p>سؤال و جواب بساز و برای مرور استفاده کن.</p>
+      <input class="field" id="flashQuestion" placeholder="سؤال یا واژه">
+      <textarea class="field" id="flashAnswer" placeholder="پاسخ یا معنی"></textarea>
+      <button class="btn" id="addFlash">افزودن فلش‌کارت</button>
+      <hr>
+      <div class="output" id="flashDisplay">هنوز فلش‌کارتی نساختی.</div>
+      <div class="btn-row">
+        <button class="btn secondary" id="showFlashAnswer">نمایش پاسخ</button>
+        <button class="btn" id="nextFlash">کارت بعدی</button>
+      </div>
+      <div class="notice" id="flashNotice"></div>
+    </article>
+
+    <article class="tool" data-tool-category="study">
+      <div class="tool-icon">🧮</div>
+      <h3>محاسبه معدل</h3>
+      <p>نمره‌ها رو با ویرگول جدا کن تا میانگین حساب بشه.</p>
+      <input class="field" id="gradesInput" placeholder="مثلاً ۱۸، ۲۰، ۱۷٫۵، ۱۹">
+      <button class="btn" id="calcGrades">محاسبه معدل</button>
+      <div class="output" id="gradesOutput">معدلت اینجا نمایش داده می‌شه.</div>
+    </article>
+
     <article class="tool" data-tool-category="fun">
       <div class="tool-icon">🧠</div>
       <h3>سؤال کوتاه</h3>
@@ -366,24 +371,47 @@ footer p{margin:0;color:var(--muted);font-size:12px}
       <button class="btn secondary" id="nextQuestion">سؤال بعدی</button>
     </article>
 
-    <div class="empty" id="emptyTools" hidden>
-      ابزاری پیدا نشد؛ عبارت یا دسته‌بندی دیگری رو امتحان کن.
-    </div>
+    <article class="tool" data-tool-category="fun">
+      <div class="tool-icon">🧩</div>
+      <h3>معمای روز</h3>
+      <p id="riddleQuestion">چه چیزی هرچه بیشتر از آن برداری، بزرگ‌تر می‌شود؟</p>
+      <button class="btn" id="showRiddle">دیدن جواب</button>
+      <div class="output" id="riddleAnswer" hidden>چاله!</div>
+      <button class="btn secondary" id="newRiddle">معمای دیگر</button>
+    </article>
+
+    <div class="empty" id="emptyTools" hidden>ابزاری پیدا نشد؛ عبارت یا دسته‌بندی دیگری رو امتحان کن.</div>
   </div>
 </section>
 
 <section class="section container" id="about">
   <div class="section-head">
-    <h2>درباره ORBIT</h2>
+    <h2>درباره NEXO</h2>
     <p>یک فضای ساده برای ابزارهای دم‌دستی.</p>
   </div>
   <div class="about-box">
     <h3>ابزارهای کاربردی، بدون پیچیدگی</h3>
-    <p>
-      این وب‌سایت برای دسترسی راحت به ابزارهای روزمره ساخته شده.
-      می‌تونی از ابزارهای متن، تایمر، یادداشت، شمارنده و سرگرمی استفاده کنی.
-      طراحی سایت با صفحه‌نمایش گوشی، تبلت و رایانه سازگاره.
-    </p>
+    <p>نکسو مجموعه‌ای از ابزارهای ساده و کاربردیه که تلاش می‌کنه انجام کارهای روزمره، مرتب‌کردن متن، مطالعه و محاسبات رو راحت‌تر کنه. این سایت برای گوشی، تبلت و رایانه طراحی شده و بسیاری از ابزارها مستقیماً داخل مرورگر اجرا می‌شن.</p>
+  </div>
+</section>
+
+<section class="section container" id="profile">
+  <div class="section-head">
+    <h2>درباره من</h2>
+    <p>با سازنده NEXO بیشتر آشنا شو.</p>
+  </div>
+  <div class="about-box profile">
+    <div class="profile-avatar" aria-hidden="true">م‌ک</div>
+    <div>
+      <h3>محمد کیان شیروانی</h3>
+      <p>سلام! من محمد کیان شیروانی هستم، ۱۴ ساله و علاقه‌مند به دنیای فناوری، طراحی وب و ساخت ایده‌های جدید.</p>
+      <p>نکسو رو با این هدف ساختم که مجموعه‌ای از ابزارهای کاربردی رو در یک محیط ساده و زیبا کنار هم قرار بدم؛ جایی که استفاده از امکانات روزمره سریع‌تر و راحت‌تر باشه. این پروژه فرصتی برای یادگیری، خلاقیت و تبدیل ایده‌ها به چیزهای واقعی برای منه.</p>
+      <div class="profile-tags">
+        <span>علاقه‌مند به فناوری</span>
+        <span>طراحی وب</span>
+        <span>یادگیری و خلاقیت</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -410,456 +438,387 @@ footer p{margin:0;color:var(--muted);font-size:12px}
 
 <footer>
   <div class="container footer-inner">
-    <p>© <span id="year"></span> ORBIT — ساخته‌شده برای استفاده روزمره</p>
+    <p>© <span id="year"></span> NEXO — ساخته‌شده با علاقه توسط محمد کیان شیروانی</p>
     <p><a href="#home">بازگشت به بالا ↑</a></p>
   </div>
 </footer>
-
 <button id="backToTop" aria-label="بازگشت به بالا">↑</button>
 <div id="toast" role="status" aria-live="polite"></div>
-
 <script>
 (()=>{
 "use strict";
-
-const $ = selector => document.querySelector(selector);
-const $$ = selector => [...document.querySelectorAll(selector)];
-
-function faDigits(value){
-  return String(value).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
-}
-
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+function faDigits(v){return String(v).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[+d])}
+function enDigits(v){return String(v).replace(/[۰-۹٠-٩]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d)>=0?"۰۱۲۳۴۵۶۷۸۹".indexOf(d):"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/[۰-۹]/g,d=>String("۰۱۲۳۴۵۶۷۸۹".indexOf(d)))}
+function normalizeDigits(v){return String(v).replace(/[۰-۹]/g,d=>String("۰۱۲۳۴۵۶۷۸۹".indexOf(d))).replace(/[٠-٩]/g,d=>String("٠١٢٣٤٥٦٧٨٩".indexOf(d)))}
 function toast(message){
-  const el=$("#toast");
-  el.textContent=message;
-  el.classList.add("show");
-  clearTimeout(toast.timeout);
-  toast.timeout=setTimeout(()=>el.classList.remove("show"),2400);
+ const el=$("#toast");el.textContent=message;el.classList.add("show");
+ clearTimeout(toast.timeout);toast.timeout=setTimeout(()=>el.classList.remove("show"),2400)
 }
-
 async function copyToClipboard(text){
-  try{
-    await navigator.clipboard.writeText(text);
-    toast("متن کپی شد.");
-  }catch(error){
-    const temporary=document.createElement("textarea");
-    temporary.value=text;
-    temporary.style.position="fixed";
-    temporary.style.opacity="0";
-    document.body.appendChild(temporary);
-    temporary.select();
-    const copied=document.execCommand("copy");
-    temporary.remove();
-    toast(copied?"متن کپی شد.":"کپی انجام نشد؛ متن رو دستی انتخاب کن.");
-  }
+ try{await navigator.clipboard.writeText(text);toast("متن کپی شد.")}
+ catch(error){
+  const t=document.createElement("textarea");t.value=text;
+  t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);
+  t.select();const ok=document.execCommand("copy");t.remove();
+  toast(ok?"متن کپی شد.":"کپی نشد؛ متن رو دستی انتخاب کن.")
+ }
+}
+function safeLoad(key,fallback){
+ try{const value=localStorage.getItem(key);return value===null?fallback:JSON.parse(value)}
+ catch(e){return fallback}
+}
+function safeSave(key,value){
+ try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){return false}
 }
 
 /* ساعت و تاریخ */
 function updateClock(){
-  const now=new Date();
-  $("#clockDisplay").textContent=faDigits(
-    new Intl.DateTimeFormat("fa-IR",{
-      hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false
-    }).format(now)
-  );
-  $("#dateDisplay").textContent=new Intl.DateTimeFormat("fa-IR",{
-    weekday:"long",year:"numeric",month:"long",day:"numeric"
-  }).format(now);
+ const now=new Date();
+ $("#clockDisplay").textContent=new Intl.DateTimeFormat("fa-IR",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(now);
+ $("#dateDisplay").textContent=new Intl.DateTimeFormat("fa-IR",{weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(now)
 }
-updateClock();
-setInterval(updateClock,1000);
+updateClock();setInterval(updateClock,1000);
 $("#year").textContent=new Date().getFullYear();
 
 /* جست‌وجو و دسته‌بندی */
 function filterTools(){
-  const query=$("#searchInput").value.trim().toLocaleLowerCase();
-  const active=$("[data-category].active");
-  const category=active?active.dataset.category:"all";
-  let shown=0;
-
-  $$("#grid .tool").forEach(tool=>{
-    const matchesText=tool.textContent.toLocaleLowerCase().includes(query);
-    const matchesCategory=category==="all"||tool.dataset.toolCategory===category;
-    tool.hidden=!(matchesText&&matchesCategory);
-    if(!tool.hidden)shown++;
-  });
-
-  $("#emptyTools").hidden=shown!==0;
+ const q=$("#searchInput").value.trim().toLocaleLowerCase();
+ const active=$("[data-category].active");
+ const cat=active?active.dataset.category:"all";let shown=0;
+ $$("#grid .tool").forEach(tool=>{
+  const text=tool.textContent.toLocaleLowerCase();
+  const matchText=text.includes(q);
+  const matchCat=cat==="all"||tool.dataset.toolCategory===cat;
+  tool.hidden=!(matchText&&matchCat);if(!tool.hidden)shown++
+ });
+ $("#emptyTools").hidden=shown!==0
 }
 $("#searchInput").addEventListener("input",filterTools);
-
-$$("[data-category]").forEach(button=>{
-  button.addEventListener("click",()=>{
-    $$("[data-category]").forEach(item=>item.classList.remove("active"));
-    button.classList.add("active");
-    filterTools();
-  });
-});
+$$("[data-category]").forEach(btn=>btn.addEventListener("click",()=>{
+ $$("[data-category]").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");filterTools()
+}));
 
 /* شمارش متن */
 $("#wordInput").addEventListener("input",()=>{
-  const text=$("#wordInput").value.trim();
-  const words=text?text.split(/\s+/u).filter(Boolean).length:0;
-  const chars=$("#wordInput").value.length;
-  const sentences=text?text.split(/[.!؟?۔]+/u).filter(s=>s.trim()).length:0;
-  $("#wordStats").textContent=
-    `کلمات: ${faDigits(words)} | حروف: ${faDigits(chars)} | جمله‌ها: ${faDigits(sentences)}`;
+ const raw=$("#wordInput").value,text=raw.trim();
+ const words=text?text.split(/\s+/u).filter(Boolean).length:0;
+ const chars=raw.length,without=raw.replace(/\s/g,"").length;
+ const sentences=text?text.split(/[.!؟?۔]+/u).filter(s=>s.trim()).length:0;
+ $("#wordStats").textContent=`کلمات: ${faDigits(words)} | حروف: ${faDigits(chars)} | بدون فاصله: ${faDigits(without)} | جمله‌ها: ${faDigits(sentences)}`
 });
 
-/* مرتب‌سازی متن */
+/* پاک‌سازی متن */
 $("#cleanText").addEventListener("click",()=>{
-  const result=$("#cleanInput").value
-    .split("\n")
-    .map(line=>line.replace(/[ \t]+/g," ").trim())
-    .filter((line,index,arr)=>line!==""||(
-      index>0&&arr[index-1]!==""
-    ))
-    .join("\n")
-    .trim();
-
-  $("#cleanOutput").value=result;
-  toast("متن مرتب شد.");
+ const lines=$("#cleanInput").value.split(/\r?\n/).map(line=>line.replace(/[ \t]+/g," ").trim());
+ const result=lines.filter((line,i)=>line!==""||(i>0&&lines[i-1]!=="")).join("\n").trim();
+ $("#cleanOutput").value=result;toast("متن مرتب شد.")
 });
 $("#copyText").addEventListener("click",()=>{
-  if(!$("#cleanOutput").value){toast("اول متن رو مرتب کن.");return;}
-  copyToClipboard($("#cleanOutput").value);
+ if(!$("#cleanOutput").value){toast("اول متن رو مرتب کن.");return}
+ copyToClipboard($("#cleanOutput").value)
 });
 
-/* تبدیل حروف انگلیسی */
-$("#toUpper").addEventListener("click",()=>{
-  $("#caseOutput").value=$("#caseInput").value.toUpperCase();
-});
-$("#toLower").addEventListener("click",()=>{
-  $("#caseOutput").value=$("#caseInput").value.toLowerCase();
-});
+/* حروف بزرگ و کوچک */
+$("#toUpper").addEventListener("click",()=>$("#caseOutput").value=$("#caseInput").value.toUpperCase());
+$("#toLower").addEventListener("click",()=>$("#caseOutput").value=$("#caseInput").value.toLowerCase());
 $("#copyCase").addEventListener("click",()=>{
-  if(!$("#caseOutput").value){toast("اول متن رو تبدیل کن.");return;}
-  copyToClipboard($("#caseOutput").value);
+ if(!$("#caseOutput").value){toast("اول متن رو تبدیل کن.");return}
+ copyToClipboard($("#caseOutput").value)
 });
+
+/* تبدیل اعداد */
+$("#digitsFa").addEventListener("click",()=>{
+ $("#digitsOutput").value=normalizeDigits($("#digitsInput").value).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[+d])
+});
+$("#digitsEn").addEventListener("click",()=>$("#digitsOutput").value=normalizeDigits($("#digitsInput").value));
+$("#copyDigits").addEventListener("click",()=>copyToClipboard($("#digitsOutput").value));
+
+/* مقایسه متن */
+$("#compareBtn").addEventListener("click",()=>{
+ const a=$("#compareA").value,b=$("#compareB").value;
+ if(a===b)$("#compareOutput").textContent="دو متن دقیقاً یکسان هستند.";
+ else{
+  const wordsA=a.trim()?a.trim().split(/\s+/u).length:0;
+  const wordsB=b.trim()?b.trim().split(/\s+/u).length:0;
+  let pos=0;while(pos<a.length&&pos<b.length&&a[pos]===b[pos])pos++;
+  $("#compareOutput").textContent=`متن‌ها یکسان نیستند.\nکلمات متن اول: ${faDigits(wordsA)}\nکلمات متن دوم: ${faDigits(wordsB)}\nاولین تفاوت از جایگاه ${faDigits(pos+1)} شروع می‌شه.`
+ }
+});
+
+/* مرتب‌سازی خطوط */
+function getLines(){return $("#linesInput").value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)}
+$("#uniqueLines").addEventListener("click",()=>{
+ $("#linesOutput").value=[...new Set(getLines())].join("\n");toast("خط‌های تکراری حذف شدند.")
+});
+$("#sortLines").addEventListener("click",()=>{
+ $("#linesOutput").value=getLines().sort((a,b)=>a.localeCompare(b,"fa")).join("\n")
+});
+$("#copyLines").addEventListener("click",()=>copyToClipboard($("#linesOutput").value));
 
 /* تایمر */
-let timerRemaining=300;
-let timerInterval=null;
-
+let timerRemaining=300,timerInterval=null;
 function renderTimer(){
-  const minutes=Math.floor(timerRemaining/60);
-  const seconds=timerRemaining%60;
-  $("#timerDisplay").textContent=faDigits(
-    String(minutes).padStart(2,"0")+":"+String(seconds).padStart(2,"0")
-  );
+ const m=Math.floor(timerRemaining/60),s=timerRemaining%60;
+ $("#timerDisplay").textContent=faDigits(String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"))
 }
-function stopTimer(){
-  if(timerInterval!==null){
-    clearInterval(timerInterval);
-    timerInterval=null;
-  }
-}
+function stopTimer(){if(timerInterval!==null){clearInterval(timerInterval);timerInterval=null}}
 function readTimerInputs(){
-  const mins=Math.min(999,Math.max(0,Number($("#mins").value)||0));
-  const secs=Math.min(59,Math.max(0,Number($("#secs").value)||0));
-  return Math.floor(mins*60+secs);
+ const m=Math.min(999,Math.max(0,Number($("#mins").value)||0));
+ const s=Math.min(59,Math.max(0,Number($("#secs").value)||0));
+ return Math.floor(m*60+s)
 }
-$("#startTimer").addEventListener("click",()=>{
-  if(timerInterval!==null)return;
-  if(timerRemaining<=0)timerRemaining=readTimerInputs();
+function startTimer(){
+ if(timerInterval!==null)return;
+ if(timerRemaining<=0)timerRemaining=readTimerInputs();
+ if(timerRemaining<=0){$("#timerNotice").textContent="اول یک زمان بیشتر از صفر وارد کن.";return}
+ $("#timerNotice").textContent="تایمر در حال اجراست.";
+ timerInterval=setInterval(()=>{
+  timerRemaining--;renderTimer();
   if(timerRemaining<=0){
-    $("#timerNotice").textContent="اول یک زمان بیشتر از صفر وارد کن.";
-    return;
+   stopTimer();timerRemaining=0;renderTimer();
+   $("#timerNotice").textContent="زمان تموم شد!";toast("زمان تایمر تموم شد.")
   }
-  $("#timerNotice").textContent="تایمر در حال اجراست.";
-  timerInterval=setInterval(()=>{
-    timerRemaining--;
-    renderTimer();
-
-    if(timerRemaining<=0){
-      stopTimer();
-      timerRemaining=0;
-      renderTimer();
-      $("#timerNotice").textContent="زمان تموم شد!";
-      toast("زمان تایمر تموم شد.");
-    }
-  },1000);
-});
-
-$("#pauseTimer").addEventListener("click",()=>{
-  stopTimer();
-  $("#timerNotice").textContent="تایمر متوقف شد.";
-});
-
+ },1000)
+}
+$("#startTimer").addEventListener("click",startTimer);
+$("#pauseTimer").addEventListener("click",()=>{stopTimer();$("#timerNotice").textContent="تایمر متوقف شد."});
 $("#resetTimer").addEventListener("click",()=>{
-  stopTimer();
-  timerRemaining=readTimerInputs();
-  renderTimer();
-  $("#timerNotice").textContent="تایمر بازنشانی شد.";
+ stopTimer();timerRemaining=readTimerInputs();renderTimer();$("#timerNotice").textContent="تایمر بازنشانی شد."
 });
-
-$("#mins").addEventListener("change",()=>{
-  if(timerInterval===null){
-    timerRemaining=readTimerInputs();
-    renderTimer();
-  }
+["mins","secs"].forEach(id=>$("#"+id).addEventListener("change",()=>{
+ if(timerInterval===null){timerRemaining=readTimerInputs();renderTimer()}
+}));
+$("#focus25").addEventListener("click",()=>{
+ stopTimer();$("#mins").value=25;$("#secs").value=0;timerRemaining=1500;renderTimer();$("#focusStatus").textContent="زمان مطالعه ۲۵ دقیقه تنظیم شد.";startTimer()
 });
-
-$("#secs").addEventListener("change",()=>{
-  if(timerInterval===null){
-    timerRemaining=readTimerInputs();
-    renderTimer();
-  }
+$("#break5").addEventListener("click",()=>{
+ stopTimer();$("#mins").value=5;$("#secs").value=0;timerRemaining=300;renderTimer();$("#focusStatus").textContent="زمان استراحت ۵ دقیقه تنظیم شد.";startTimer()
 });
-
 renderTimer();
 
 /* شمارنده */
 let count=0;
+function renderCount(){$("#countDisplay").textContent=faDigits(count)}
+$("#plus").addEventListener("click",()=>{count++;renderCount()});
+$("#minus").addEventListener("click",()=>{count--;renderCount()});
+$("#countReset").addEventListener("click",()=>{count=0;renderCount()});
 
-function renderCount(){
-  $("#countDisplay").textContent=faDigits(count);
-}
-
-$("#plus").addEventListener("click",()=>{
-  count++;
-  renderCount();
+/* یادداشت با ذخیره خودکار */
+const notesKey="nexo-notes-v1";
+$("#notesInput").value=safeLoad(notesKey,"");
+$("#notesInput").addEventListener("input",()=>{
+ $("#notesNotice").textContent=safeSave(notesKey,$("#notesInput").value)?"ذخیره خودکار انجام شد.":"ذخیره‌سازی در دسترس نیست."
 });
-
-$("#minus").addEventListener("click",()=>{
-  count--;
-  renderCount();
-});
-
-$("#countReset").addEventListener("click",()=>{
-  count=0;
-  renderCount();
-});
-
-/* یادداشت سریع */
-const notesKey="orbit-notes-v1";
-
-try{
-  $("#notesInput").value=localStorage.getItem(notesKey)||"";
-}catch(error){}
-
 $("#saveNotes").addEventListener("click",()=>{
-  try{
-    localStorage.setItem(notesKey,$("#notesInput").value);
-    $("#notesNotice").textContent="یادداشت در همین مرورگر ذخیره شد.";
-  }catch(error){
-    $("#notesNotice").textContent="ذخیره‌سازی در این مرورگر در دسترس نیست.";
-  }
+ $("#notesNotice").textContent=safeSave(notesKey,$("#notesInput").value)?"یادداشت ذخیره شد.":"ذخیره‌سازی در دسترس نیست."
 });
-
 $("#clearNotes").addEventListener("click",()=>{
-  $("#notesInput").value="";
-  try{
-    localStorage.removeItem(notesKey);
-  }catch(error){}
-  $("#notesNotice").textContent="یادداشت پاک شد.";
+ $("#notesInput").value="";safeSave(notesKey,"");$("#notesNotice").textContent="یادداشت پاک شد."
 });
 
-/* ساخت QR Code */
+/* ساخت QR */
 $("#makeQR").addEventListener("click",()=>{
-  const value=$("#qrInput").value.trim();
-  const result=$("#qrResult");
-  result.replaceChildren();
+ const value=$("#qrInput").value.trim(),result=$("#qrResult");result.replaceChildren();
+ if(!value){toast("اول یک متن یا لینک وارد کن.");return}
+ const img=document.createElement("img");img.alt="QR Code ساخته‌شده";img.width=200;img.height=200;img.loading="lazy";
+ img.src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="+encodeURIComponent(value);
+ img.onerror=()=>{result.textContent="ساخت QR ناموفق بود؛ اتصال اینترنت رو بررسی کن."};
+ result.appendChild(img);
+ const link=document.createElement("a");link.href=img.src;link.target="_blank";link.rel="noopener";link.textContent="بازکردن تصویر QR";
+ link.className="btn secondary";link.style.display="block";link.style.textAlign="center";link.style.marginTop="8px";result.appendChild(link)
+});
 
-  if(!value){
-    toast("اول یک متن یا لینک وارد کن.");
-    return;
-  }
+/* درصد و تخفیف */
+$("#calcPercent").addEventListener("click",()=>{
+ const base=Number($("#percentBase").value),rate=Number($("#percentRate").value);
+ if($("#percentBase").value.trim()===""||$("#percentRate").value.trim()===""||!Number.isFinite(base)||!Number.isFinite(rate)){
+  $("#percentOutput").textContent="عددهای معتبر وارد کن.";return
+ }
+ const amount=base*rate/100;
+ $("#percentOutput").textContent=`مقدار ${faDigits(rate)} درصد: ${faDigits(amount)}\nقیمت بعد از کسر این درصد: ${faDigits(base-amount)}`
+});
 
-  const image=document.createElement("img");
-  image.alt="QR Code ساخته‌شده";
-  image.width=200;
-  image.height=200;
-  image.loading="lazy";
-  image.src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="+encodeURIComponent(value);
-
-  image.onerror=()=>{
-    result.textContent="ساخت QR ناموفق بود؛ اتصال اینترنت رو بررسی کن.";
-  };
-
-  result.appendChild(image);
+/* ماشین‌حساب */
+$("#calculate").addEventListener("click",()=>{
+ const a=Number(normalizeDigits($("#calcA").value)),b=Number(normalizeDigits($("#calcB").value)),op=$("#calcOp").value;
+ if($("#calcA").value.trim()===""||$("#calcB").value.trim()===""){ $("#calcOutput").textContent="هر دو عدد رو وارد کن.";return}
+ let r;
+ switch(op){
+  case "+":r=a+b;break;case "-":r=a-b;break;case "*":r=a*b;break;
+  case "/":if(b===0){$("#calcOutput").textContent="تقسیم بر صفر تعریف نشده.";return}r=a/b;break;
+  case "%":if(b===0){$("#calcOutput").textContent="باقی‌مانده بر صفر تعریف نشده.";return}r=a%b;break;
+  case "pow":r=Math.pow(a,b);break;
+ }
+ $("#calcOutput").textContent=Number.isFinite(r)?("نتیجه: "+faDigits(Number(r.toPrecision(12)))):"نتیجه در محدوده قابل محاسبه نیست."
 });
 
 /* عدد تصادفی */
 $("#makeRandom").addEventListener("click",()=>{
-  const min=Number($("#randomMin").value);
-  const max=Number($("#randomMax").value);
-
-  if(!Number.isSafeInteger(min)||!Number.isSafeInteger(max)||min>max){
-    $("#randomOutput").textContent="بازه اعداد رو بررسی کن.";
-    return;
-  }
-
-  if(max-min>1000000000000){
-    $("#randomOutput").textContent="بازه انتخابی بیش از حد بزرگه.";
-    return;
-  }
-
-  const result=Math.floor(Math.random()*(max-min+1))+min;
-  $("#randomOutput").textContent="عدد انتخاب‌شده: "+faDigits(result);
+ const min=Number(normalizeDigits($("#randomMin").value)),max=Number(normalizeDigits($("#randomMax").value));
+ if(!Number.isSafeInteger(min)||!Number.isSafeInteger(max)||min>max){$("#randomOutput").textContent="بازه اعداد رو بررسی کن.";return}
+ if(max-min>1000000000000){$("#randomOutput").textContent="بازه انتخابی بیش از حد بزرگه.";return}
+ $("#randomOutput").textContent="عدد انتخاب‌شده: "+faDigits(Math.floor(Math.random()*(max-min+1))+min)
 });
 
+/* برنامه‌ریز کارها */
+const tasksKey="nexo-tasks-v1";
+let tasks=safeLoad(tasksKey,[]);
+function renderTasks(){
+ const list=$("#taskList");list.replaceChildren();
+ if(!tasks.length){list.innerHTML='<p class="muted">هنوز کاری اضافه نکردی.</p>';return}
+ tasks.forEach((task,index)=>{
+  const row=document.createElement("div");row.style.cssText="display:flex;align-items:center;gap:8px;margin-top:8px;padding:9px;background:var(--panel2);border-radius:10px";
+  const check=document.createElement("input");check.type="checkbox";check.checked=task.done;check.setAttribute("aria-label","انجام شد");
+  check.addEventListener("change",()=>{tasks[index].done=check.checked;safeSave(tasksKey,tasks);renderTasks()});
+  const label=document.createElement("span");label.textContent=task.text;label.style.cssText="flex:1;overflow-wrap:anywhere";
+  if(task.done)label.style.textDecoration="line-through";
+  const del=document.createElement("button");del.className="btn secondary";del.textContent="حذف";del.addEventListener("click",()=>{tasks.splice(index,1);safeSave(tasksKey,tasks);renderTasks()});
+  row.append(check,label,del);list.appendChild(row)
+ })
+}
+$("#addTask").addEventListener("click",()=>{
+ const text=$("#taskInput").value.trim();if(!text){$("#taskNotice").textContent="اول متن کار رو بنویس.";return}
+ tasks.push({text,done:false});safeSave(tasksKey,tasks);$("#taskInput").value="";$("#taskNotice").textContent="کار اضافه شد.";renderTasks()
+});
+$("#taskInput").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("#addTask").click()}});
+renderTasks();
+
+/* فلش‌کارت */
+const flashKey="nexo-flashcards-v1";
+let flashcards=safeLoad(flashKey,[]),flashIndex=0,flashShowingAnswer=false;
+function renderFlash(){
+ if(!flashcards.length){$("#flashDisplay").textContent="هنوز فلش‌کارتی نساختی.";return}
+ if(flashIndex>=flashcards.length)flashIndex=0;
+ const f=flashcards[flashIndex];
+ $("#flashDisplay").textContent=flashShowingAnswer?("پاسخ: "+f.a):("کارت "+faDigits(flashIndex+1)+" از "+faDigits(flashcards.length)+"\nسؤال: "+f.q)
+}
+$("#addFlash").addEventListener("click",()=>{
+ const q=$("#flashQuestion").value.trim(),a=$("#flashAnswer").value.trim();
+ if(!q||!a){$("#flashNotice").textContent="هم سؤال و هم پاسخ رو وارد کن.";return}
+ flashcards.push({q,a});safeSave(flashKey,flashcards);flashIndex=flashcards.length-1;flashShowingAnswer=false;
+ $("#flashQuestion").value="";$("#flashAnswer").value="";$("#flashNotice").textContent="فلش‌کارت اضافه شد.";renderFlash()
+});
+$("#showFlashAnswer").addEventListener("click",()=>{
+ if(!flashcards.length){$("#flashNotice").textContent="اول یک فلش‌کارت بساز.";return}
+ flashShowingAnswer=!flashShowingAnswer;renderFlash()
+});
+$("#nextFlash").addEventListener("click",()=>{
+ if(!flashcards.length){$("#flashNotice").textContent="اول یک فلش‌کارت بساز.";return}
+ flashIndex=(flashIndex+1)%flashcards.length;flashShowingAnswer=false;renderFlash()
+});
+renderFlash();
+
+/* محاسبه معدل */
+$("#calcGrades").addEventListener("click",()=>{
+ const raw=normalizeDigits($("#gradesInput").value).replace(/[٫]/g,".");
+ const values=raw.split(/[,،;\s]+/).filter(Boolean).map(Number);
+ if(!values.length||values.some(n=>!Number.isFinite(n)||n<0||n>20)){
+  $("#gradesOutput").textContent="نمره‌های معتبر بین صفر تا ۲۰ وارد کن و با ویرگول جدا کن.";return
+ }
+ const avg=values.reduce((s,n)=>s+n,0)/values.length;
+ $("#gradesOutput").textContent=`تعداد نمره‌ها: ${faDigits(values.length)}\nمعدل: ${faDigits(avg.toFixed(2))}`
+});
+<script>
 /* سؤال‌های کوتاه */
 const questions=[
-  {
-    q:"کدام سیاره به سیاره سرخ معروف است؟",
-    a:["مریخ","زهره","نپتون"],
-    correct:0
-  },
-  {
-    q:"یک ساعت چند دقیقه است؟",
-    a:["۳۰","۶۰","۱۰۰"],
-    correct:1
-  },
-  {
-    q:"کدام مورد برای ساخت صفحات وب استفاده می‌شود؟",
-    a:["HTML","MP3","JPEG"],
-    correct:0
-  },
-  {
-    q:"کدام حیوان پستاندار است؟",
-    a:["دلفین","کوسه","ماهی قرمز"],
-    correct:0
-  },
-  {
-    q:"عدد ۹ به توان ۲ چند می‌شود؟",
-    a:["۱۸","۸۱","۷۲"],
-    correct:1
-  }
+ {q:"کدام سیاره به سیاره سرخ معروف است؟",a:["مریخ","زهره","نپتون"],correct:0},
+ {q:"یک ساعت چند دقیقه است؟",a:["۳۰","۶۰","۱۰۰"],correct:1},
+ {q:"کدام مورد برای ساخت صفحات وب استفاده می‌شود؟",a:["HTML","MP3","JPEG"],correct:0},
+ {q:"کدام حیوان پستاندار است؟",a:["دلفین","کوسه","ماهی قرمز"],correct:0},
+ {q:"عدد ۹ به توان ۲ چند می‌شود؟",a:["۱۸","۸۱","۷۲"],correct:1},
+ {q:"بزرگ‌ترین سیاره منظومه شمسی کدام است؟",a:["زمین","مشتری","مریخ"],correct:1},
+ {q:"حاصل ۷ × ۸ چند است؟",a:["۵۴","۵۶","۶۴"],correct:1},
+ {q:"کدام گاز برای تنفس انسان ضروری است؟",a:["اکسیژن","هیدروژن","هلیوم"],correct:0},
+ {q:"آب در فشار معمولی در چند درجه سانتی‌گراد می‌جوشد؟",a:["۵۰","۱۰۰","۱۵۰"],correct:1}
 ];
-
-let questionIndex=-1;
-let answered=false;
-
+let questionIndex=-1,answered=false,quizScore=0,quizAnswered=0;
 function renderQuestion(){
-  questionIndex=(questionIndex+1)%questions.length;
-  answered=false;
-
-  const item=questions[questionIndex];
-  $("#question").textContent=item.q;
-  $("#quizNotice").textContent="";
-  $("#answers").replaceChildren();
-
-  item.a.forEach((answer,index)=>{
-    const button=document.createElement("button");
-    button.className="answer-btn";
-    button.textContent=answer;
-
-    button.addEventListener("click",()=>{
-      if(answered)return;
-      answered=true;
-
-      if(index===item.correct){
-        $("#quizNotice").textContent="آفرین! پاسخ درست بود.";
-        button.style.borderColor="var(--accent2)";
-      }else{
-        $("#quizNotice").textContent="پاسخ درست نبود؛ سؤال بعدی رو امتحان کن.";
-      }
-    });
-
-    $("#answers").appendChild(button);
+ questionIndex=(questionIndex+1)%questions.length;answered=false;
+ const item=questions[questionIndex];
+ $("#question").textContent=item.q;$("#quizNotice").textContent="";
+ $("#answers").replaceChildren();
+ item.a.forEach((answer,index)=>{
+  const button=document.createElement("button");button.className="answer-btn";button.textContent=answer;
+  button.addEventListener("click",()=>{
+   if(answered)return;answered=true;quizAnswered++;
+   if(index===item.correct){quizScore++;$("#quizNotice").textContent="آفرین! پاسخ درست بود. امتیاز: "+faDigits(quizScore)+" از "+faDigits(quizAnswered);button.style.borderColor="var(--accent2)"}
+   else{
+    $("#quizNotice").textContent="پاسخ درست: "+item.a[item.correct]+" | امتیاز: "+faDigits(quizScore)+" از "+faDigits(quizAnswered);
+    [...$("#answers").children].forEach((b,i)=>{if(i===item.correct)b.style.borderColor="var(--accent2)"})
+   }
   });
+  $("#answers").appendChild(button)
+ })
 }
+$("#nextQuestion").addEventListener("click",renderQuestion);renderQuestion();
 
-$("#nextQuestion").addEventListener("click",renderQuestion);
-renderQuestion();
+/* معماها */
+const riddles=[
+ {q:"چه چیزی هرچه بیشتر از آن برداری، بزرگ‌تر می‌شود؟",a:"چاله!"},
+ {q:"چه چیزی دندان دارد ولی غذا نمی‌خورد؟",a:"شانه!"},
+ {q:"چه چیزی همیشه جلوی توست اما نمی‌توانی آن را ببینی؟",a:"آینده!"},
+ {q:"چه چیزی گردن دارد ولی سر ندارد؟",a:"بطری!"},
+ {q:"چه چیزی هرچه خشک‌تر می‌کند، خودش خیس‌تر می‌شود؟",a:"حوله!"}
+];
+let riddleIndex=0;
+$("#showRiddle").addEventListener("click",()=>{
+ $("#riddleAnswer").hidden=false;$("#showRiddle").textContent="جواب نمایش داده شد"
+});
+$("#newRiddle").addEventListener("click",()=>{
+ riddleIndex=(riddleIndex+1)%riddles.length;
+ $("#riddleQuestion").textContent=riddles[riddleIndex].q;
+ $("#riddleAnswer").textContent=riddles[riddleIndex].a;
+ $("#riddleAnswer").hidden=true;$("#showRiddle").textContent="دیدن جواب"
+});
 
 /* پوسته روشن و تاریک */
-const themeKey="orbit-theme-v1";
-
-try{
-  if(localStorage.getItem(themeKey)==="light"){
-    document.body.classList.add("light");
-  }
-}catch(error){}
-
-function updateThemeButton(){
-  $("#themeToggle").textContent=
-    document.body.classList.contains("light")?"🌙":"☀️";
-}
-
+const themeKey="nexo-theme-v1";
+try{if(localStorage.getItem(themeKey)==="light")document.body.classList.add("light")}catch(e){}
+function updateThemeButton(){$("#themeToggle").textContent=document.body.classList.contains("light")?"🌙":"☀️"}
 updateThemeButton();
-
 $("#themeToggle").addEventListener("click",()=>{
-  document.body.classList.toggle("light");
-
-  try{
-    localStorage.setItem(
-      themeKey,
-      document.body.classList.contains("light")?"light":"dark"
-    );
-  }catch(error){}
-
-  updateThemeButton();
+ document.body.classList.toggle("light");
+ try{localStorage.setItem(themeKey,document.body.classList.contains("light")?"light":"dark")}catch(e){}
+ updateThemeButton()
 });
 
 /* منوی موبایل */
 $("#menuToggle").addEventListener("click",()=>{
-  const menu=$("#navMenu");
-  menu.classList.toggle("open");
-  $("#menuToggle").textContent=
-    menu.classList.contains("open")?"✕":"☰";
+ const menu=$("#navMenu");menu.classList.toggle("open");
+ $("#menuToggle").textContent=menu.classList.contains("open")?"✕":"☰"
 });
+$$(".nav-links a").forEach(link=>link.addEventListener("click",()=>{
+ $("#navMenu").classList.remove("open");$("#menuToggle").textContent="☰"
+}));
 
-$$(".nav-links a").forEach(link=>{
-  link.addEventListener("click",()=>{
-    $("#navMenu").classList.remove("open");
-    $("#menuToggle").textContent="☰";
-  });
-});
-
-/* بازگشت به بالای صفحه */
+/* بازگشت به بالا */
 const backToTop=$("#backToTop");
-
-window.addEventListener("scroll",()=>{
-  backToTop.classList.toggle("show",window.scrollY>350);
-},{passive:true});
-
-backToTop.addEventListener("click",()=>{
-  window.scrollTo({top:0,behavior:"smooth"});
-});
+window.addEventListener("scroll",()=>backToTop.classList.toggle("show",window.scrollY>350),{passive:true});
+backToTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 
 /* فرم پیشنهادها */
 $("#suggestionForm").addEventListener("submit",async event=>{
-  event.preventDefault();
-
-  const message=$("#suggestionMessage").value.trim();
-  const status=$("#formStatus");
-  const sendButton=$("#sendForm");
-
-  if(!message){
-    status.textContent="لطفاً پیشنهادت رو بنویس.";
-    return;
-  }
-
-  status.textContent="در حال ارسال...";
-  sendButton.disabled=true;
-
-  try{
-    const formData=new FormData(event.currentTarget);
-
-    const response=await fetch("https://formspree.io/f/xyekjjak",{
-      method:"POST",
-      body:formData,
-      headers:{Accept:"application/json"}
-    });
-
-    if(response.ok){
-      status.textContent="پیشنهادت با موفقیت ارسال شد. ممنون!";
-      event.currentTarget.reset();
-    }else{
-      status.textContent="ارسال انجام نشد. تنظیمات فرم یا اینترنت رو بررسی کن.";
-    }
-  }catch(error){
-    status.textContent="اتصال برقرار نشد. اینترنت رو بررسی کن و دوباره تلاش کن.";
-  }finally{
-    sendButton.disabled=false;
-  }
+ event.preventDefault();
+ const message=$("#suggestionMessage").value.trim();
+ const status=$("#formStatus"),sendButton=$("#sendForm");
+ if(!message){status.textContent="لطفاً پیشنهادت رو بنویس.";return}
+ status.textContent="در حال ارسال...";sendButton.disabled=true;
+ try{
+  const formData=new FormData(event.currentTarget);
+  const response=await fetch("https://formspree.io/f/xyekjjak",{
+   method:"POST",body:formData,headers:{Accept:"application/json"}
+  });
+  if(response.ok){status.textContent="پیشنهادت با موفقیت ارسال شد. ممنون!";event.currentTarget.reset()}
+  else status.textContent="ارسال انجام نشد. تنظیمات فرم یا اینترنت رو بررسی کن."
+ }catch(error){status.textContent="اتصال برقرار نشد. اینترنت رو بررسی کن و دوباره تلاش کن."}
+ finally{sendButton.disabled=false}
 });
 
-/* فعال‌سازی فیلتر ابزارها */
+/* شروع فیلتر ابزارها */
 filterTools();
-
 })();
 </script>
 </body>
